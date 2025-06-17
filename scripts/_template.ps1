@@ -16,19 +16,19 @@
     name = "Variable 1"
     description = "Description of Variable 1"
     type = "<type>"
-    mandatory = "true|false"
+    mandatory = true|false
     default_value = "<default_value>"
     option_values = ["<option1>", "<option2>"]
-    top_option_is_default = "true|false"
+    top_option_is_default = true|false
 
     [[script.variables]]
     name = "Variable 2"
     description = "Description of Variable 2"
     type = "<type>"
-    mandatory = "true|false"
+    mandatory = true|false
     default_value = "<default_value>"
     option_values = ["<option1>", "<option2>"]
-    top_option_is_default = "true|false"
+    top_option_is_default = true|false
 #>
 
 # Write your PowerShell script here

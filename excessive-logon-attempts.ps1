@@ -147,6 +147,7 @@ Note: Compare FailureSubStatus (or FailureStatus if FailureSubStatus is not avai
 For more detailed information: https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4625
 
 To troubleshoot further, follow the troubleshooting section in the document: https://content.provaltech.com/docs/e99ec890-ae05-4ad5-bdbc-6b0599be67e9/#troubleshooting
+
 "@
     exit 1
     } else {

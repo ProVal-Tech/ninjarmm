@@ -1,0 +1,386 @@
+[Group]
+Path = "Administration > Device > Groups"
+
+[Filters]
+
+[Filters.Organization]
+Organization = "Org1, Org2, Org3"
+
+[Filters.Location]
+Location = "Loc1, Loc2, Loc3"
+
+[Filters.Type]
+Type = "Type1, Type2, Type3"
+
+[Filters.Role]
+Role = "Role1, Role2, Role3"
+
+[Filters.Status]
+Status = "Status1, Status2, Status3"
+Contains = "All / Any"
+
+[Filters.More_filters]
+
+[Filters.More_filters.Device]
+
+[Filters.More_filters.Device.Active_Directory_Controllers]
+Active_Directory_Controllers = false / true
+
+[Filters.More_filters.Device.Activities]
+Time_span = ""
+Activities = "Activity1, Activity2, Activity3"
+
+[Filters.More_filters.Device.Any_Condition_Triggered]
+Any_Condition_Triggered = false / true
+
+[Filters.More_filters.Device.Architecture]
+32-bit = false / true
+64-bit = false / true
+
+[Filters.More_filters.Device.Bitlocker_status]
+Enabled = false / true
+Disabled = false / true
+Unknown = false / true
+
+[Filters.More_filters.Device.Condition_Triggered]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Device.Contains_Text]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Device.Custom_Fields]
+
+[Filters.More_filters.Device.Custom_Fields.Has_all_conditions]
+Custom_field = ""
+Condition = "Contains / Contains none / Equals / Does not equal / Exists / Doesn't exist"
+Text = ""
+Dropdown_value = ""
+Checkbox_value = false / true
+
+[Filters.More_filters.Device.Custom_Fields.Has_all_conditions]
+Custom_field = ""
+Condition = "Contains / Contains none / Equals / Does not equal / Exists / Doesn't exist"
+Text = ""
+Dropdown_value = ""
+Checkbox_value = false / true
+
+[Filters.More_filters.Device.Custom_Fields.Has_all_conditions]
+Custom_field = ""
+Condition = "Contains / Contains none / Equals / Does not equal / Exists / Doesn't exist"
+Text = ""
+Dropdown_value = ""
+Checkbox_value = false / true
+
+[Filters.More_filters.Device.Custom_Fields.Has_any_conditions]
+Custom_field = ""
+Condition = "Contains / Contains none / Equals / Does not equal / Exists / Doesn't exist"
+Text = ""
+Dropdown_value = ""
+Checkbox_value = false / true
+
+[Filters.More_filters.Device.Custom_Fields.Has_any_conditions]
+Custom_field = ""
+Condition = "Contains / Contains none / Equals / Does not equal / Exists / Doesn't exist"
+Text = ""
+Dropdown_value = ""
+Checkbox_value = false / true
+
+[Filters.More_filters.Device.Custom_Fields.Has_any_conditions]
+Custom_field = ""
+Condition = "Contains / Contains none / Equals / Does not equal / Exists / Doesn't exist"
+Text = ""
+Dropdown_value = ""
+Checkbox_value = false / true
+
+[Filters.More_filters.Device.Device_Make]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Device.Device_Name]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Device.Device_Threats]
+Active = false / true
+Blocked = false / true
+Quarantine = false / true
+
+[Filters.More_filters.Device.Devices_Requiring_Reboot_to_Disinfect]
+Devices_Requiring_Reboot_to_Disinfect = false / true
+
+[Filters.More_filters.Device.Devices_Requiring_Reboot_to_Install]
+Devices_Requiring_Reboot_to_Install = false / true
+
+[Filters.More_filters.Device.Devices_Requiring_Reboot_to_Upgrade_AV_Engine]
+Devices_Requiring_Reboot_to_Upgrade_AV_Engine = false / true
+
+[Filters.More_filters.Device.Devices_with_install_issues]
+Devices_with_install_issues = false / true
+
+[Filters.More_filters.Device.Domain]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Device.Downtime]
+Amount = ""
+Time_unit = "Minutes / Hours / Days / Weeks / Months / Years"
+
+[Filters.More_filters.Device.FileVault_Status]
+FileVault_Status = "Off / On"
+
+[Filters.More_filters.Device.Free_Drive_Space]
+Operator = "Greater than or equal to / Less than or equal to / Greater than / Less than / Range"
+Value = "  GB"
+
+[Filters.More_filters.Device.Last_Uptime]
+Amount = ""
+Time_unit = "Minutes / Hours / Days / Weeks / Months / Years"
+
+[Filters.More_filters.Device.Logged_in_users]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Device.Maintenance_Mode]
+Configured = false / true
+In_Process = false / true
+Failed = false / true
+
+[Filters.More_filters.Device.Manufacturer_Fulfillment_Date]
+Condition = "Greater than or equal to / Less than or equal to"
+Count = ""
+Measurement = "Days / Weeks / Months / Years"
+
+[Filters.More_filters.Device.MDM_-_Apple_Push_Notification_service-APNs]
+APNs = "APN1, APN2, APN3"
+
+[Filters.More_filters.Device.MDM_-_Content_tokens]
+Content_tokens = "Token1, Token2, Token3"
+
+[Filters.More_filters.Device.MDM_-_Enrolled_devices]
+MDM_enrolled_devices = false / true
+
+[Filters.More_filters.Device.MDM_-_Expired_Enrollment_Profile_Status]
+MDM_expired_enrollment_profile_status = false / true
+
+[Filters.More_filters.Device.Needs_reboot]
+Needs_reboot = false / true
+
+[Filters.More_filters.Device.NMS_delegate]
+NMS_delegate = false / true
+
+[Filters.More_filters.Device.Notes]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Device.OS_Install_Date]
+Condition = "Greater than or equal to / Less than or equal to"
+Count = ""
+Measurement = "Days / Weeks / Months / Years"
+
+[Filters.More_filters.Device.Policies]
+Policy = "Policy1, Policy2, Policy3"
+
+[Filters.More_filters.Device.Running_Actions]
+Running_Actions = "Action1, Action2, Action3"
+
+[Filters.More_filters.Device.Tags]
+Operator = "Contains all selected tags / Contains any selected tag / Contains none of the selected tags / Tags present / No tags present"
+Tags = "Tag1, Tag2, Tag3"
+
+[Filters.More_filters.Device.TeamViewer_ID]
+TeamViewer_ID = ""
+
+[Filters.More_filters.Device.Total_Drive_Space]
+Operator = "Greater than or equal to / Less than or equal to / Greater than / Less than / Range"
+Value = "  GB"
+
+[Filters.More_filters.Device.TPM_Status]
+Enabled = false / true
+Disabled = false / true
+Not_Detected = false / true
+
+[Filters.More_filters.Device.Uptime]
+Amount = ""
+Time_unit = "Minutes / Hours / Days / Weeks / Months / Years"
+
+[Filters.More_filters.Device.Warranty_End_Date]
+Condition = "Greater than or equal to / Less than or equal to"
+Count = ""
+Measurement = "Days / Weeks / Months / Years"
+
+[Filters.More_filters.Device.Warranty_Start_Date]
+Condition = "Greater than or equal to / Less than or equal to"
+Count = ""
+Measurement = "Days / Weeks / Months / Years"
+
+[Filters.More_filters.Inventory]
+
+[Filters.More_filters.Inventory.Memory_Capacity]
+Operator = "Greater than or equal to / Less than or equal to / Greater than / Less than / Range"
+Value = "  GB"
+
+[Filters.More_filters.Inventory.OS]
+OS = "OS1, OS2, OS3"
+
+[Filters.More_filters.Inventory.OS_with_edition]
+OS_with_edition = "OS1, OS2, OS3"
+
+[Filters.More_filters.Inventory.OSType]
+Linux = false / true
+Mac = false / true
+Windows = false / true
+
+[Filters.More_filters.Inventory.OS_Version_build]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Inventory.OS_Version_major]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Inventory.OS_Version_minor]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Inventory.OS_Version_release]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Inventory.Processor_Type]
+Processor_Type = "Type1, Type2, Type3"
+
+[Filters.More_filters.Inventory.Software_Inventory]
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+Time_Span = "All time / Within the last / Date Range"
+
+[Filters.More_filters.Inventory.Software_Inventory.Time_Span.Withing_the_last]
+Count = ""
+Measurement = "Days / Weeks / Months / Years"
+
+[Filters.More_filters.Inventory.Software_Inventory.Time_Span.Date_Range]
+Date_Range = "MM/dd/yyyy - MM/dd/yyyy"
+
+[Filters.More_filters.Inventory.Software_Inventory.Software]
+Name = ""
+
+[Filters.More_filters.Inventory.Software_Inventory.Software.Version]
+Operator = "All / Equal to / Greater than or equal to / Less than or equal to / Greater than / Less than"
+Software_Version = ""
+
+[Filters.More_filters.Inventory.Software_Inventory.Software]
+Name = ""
+
+[Filters.More_filters.Inventory.Software_Inventory.Software.Version]
+Operator = "All / Equal to / Greater than or equal to / Less than or equal to / Greater than / Less than"
+Software_Version = ""
+
+[Filters.More_filters.Inventory.Software_Inventory.Software]
+Name = ""
+
+[Filters.More_filters.Inventory.Software_Inventory.Software.Version]
+Operator = "All / Equal to / Greater than or equal to / Less than or equal to / Greater than / Less than"
+Software_Version = ""
+
+[Filters.More_filters.Network]
+
+[Filters.More_filters.Network.DNS_Server]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Network.Gateway_IP]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Network.IP_Address]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Network.Public_Address]
+Filter = "Filter1, Filter2, Filter3"
+Operator = "Contains / Does not contain"
+Result = "Any / All"
+
+[Filters.More_filters.Patching]
+
+[Filters.More_filters.Patching.Last_OS_Patch_Install]
+Operator = "Before / After"
+Date = "MM/dd/yyyy"
+Failures_Only = false / true
+NinjaOne_update_engine_only = false / true
+
+[Filters.More_filters.Patching.Last_OS_Patch_Scan]
+Operator = "Before / After"
+Date = "MM/dd/yyyy"
+
+[Filters.More_filters.Patching.No_OS_Patch_Scan]
+Amount = ""
+Time_Unit = "Minutes / Hours / Days / Weeks / Months / Years"
+
+[Filters.More_filters.Patching.OS_Patches]
+Operator = "Contains / Does not contain"
+Patch_types = "Manual / Approved / Rejected / Installed / Failed"
+OS_Patches = "Patch1, Patch2, Patch3"
+
+[Filters.More_filters.Patching.OS_Patching_Enabled]
+OS_Patching_Enabled = "Disabled / Enabled"
+
+[Filters.More_filters.Patching.Software_Patches]
+Operator = "Contains / Does not contain"
+Patch_types = "Manual / Approved / Rejected / Installed / Failed"
+Software_Patches = "Patch1, Patch2, Patch3"
+
+[Filters.More_filters.Patching.Software_Patching_Enabled]
+Software_Patching_Enabled = "Disabled / Enabled"
+
+[Filters.More_filters.Patching.Windows_Patching_Mode]
+Configure_Windows_Updates = false / true
+Control_Windows_Patch_Management = false / true
+
+[Filters.More_filters.Vulnerabilities]
+
+[Filters.More_filters.Vulnerabilities.CVE_ID]
+CVE_ID = "CVE1, CVE2, CVE3"
+
+[Filters.More_filters.Vulnerabilities.Scan_groups]
+Scan_groups = "group1, group2, group3"
+
+[Filters.More_filters.Vulnerabilities.Severity]
+None = false / true
+Low = false / true
+Medium = false / true
+High = false / true
+Critical = false / true
+
+[Save_device_group]
+Name = ""
+Description = ""
+Permission_type = "Self (Private) ━━ default / By Technician role"
+
+[Save_device_group.By_Technician_Role.Roles_with_access]
+Name = ""
+Access = "View only / Update / Full access"
+
+[Save_device_group.By_Technician_Role.Roles_with_access]
+Name = ""
+Access = "View only / Update / Full access"
+
+[Save_device_group.By_Technician_Role.Roles_with_access]
+Name = ""
+Access = "View only / Update / Full access"

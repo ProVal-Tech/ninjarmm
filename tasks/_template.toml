@@ -1,0 +1,94 @@
+[Task]
+Path = "Administration > Tasks"
+
+[Details]
+
+[Details.General]
+Enabled = false / true
+Name = ""
+Description = ""
+Allow_Groups = false / true
+
+[Details.Schedule]
+Repeats = "Daily / Weekly / Monthly / Every"
+
+[Details.Schedule.Repeats.Daily]
+Recur_every = " day(s)"
+Start_At = "MM/dd/yyyy hh:mm AM / PM"
+Ends = "Never / After / On"
+
+[Details.Schedule.Repeats.Daily.Ends.After]
+Occurrences = ""
+
+[Details.Schedule.Repeats.Daily.Ends.On]
+End_Date = "MM/dd/yyyy"
+
+[Details.Schedule.Repeats.Weekly]
+On_Days = "S, M, T, W, T, F, S"
+Recur_every = " week(s)"
+Start_At = "MM/dd/yyyy hh:mm AM / PM"
+Ends = "Never / After / On"
+
+[Details.Schedule.Repeats.Weekly.Ends.After]
+Occurrences = ""
+
+[Details.Schedule.Repeats.Weekly.Ends.On]
+End_Date = "MM/dd/yyyy"
+
+[Details.Schedule.Repeats.Monthly]
+Day_of_Month = ""
+Recur_every = " month(s)"
+Start_At = "MM/dd/yyyy hh:mm AM / PM"
+Ends = "Never / After / On"
+
+[Details.Schedule.Repeats.Monthly.Ends.After]
+Occurrences = ""
+
+[Details.Schedule.Repeats.Monthly.Ends.On]
+End_Date = "MM/dd/yyyy"
+
+[Details.Schedule.Repeats.Every]
+Recur_Every = " Hours"
+Start_At = "MM/dd/yyyy hh:mm AM / PM"
+Ends = "Never / After / On"
+
+[Details.Schedule.Repeats.Every.Ends.After]
+Occurrences = ""
+
+[Details.Schedule.Repeats.Every.Ends.On]
+End_Date = "MM/dd/yyyy"
+
+[Details.Automation]
+Name = ""
+
+[Details.Automation.Parameters]
+Run_As = "System / Current Logged on User / Preferred Windows Local Admin / Preferred Windows Domain Admin"
+Preset_Parameter = ""
+Parameter1 = "Value1"
+Parameter2 = "Value1"
+Parameter3 = "Value1"
+
+[Details.Automation]
+Name = ""
+
+[Details.Automation.Parameters]
+Run_As = "System / Current Logged on User / Preferred Windows Local Admin / Preferred Windows Domain Admin"
+Preset_Parameter = ""
+Parameter1 = "Value1"
+Parameter2 = "Value1"
+Parameter3 = "Value1"
+
+[Details.Automation]
+Name = ""
+
+[Details.Automation.Parameters]
+Run_As = "System / Current Logged on User / Preferred Windows Local Admin / Preferred Windows Domain Admin"
+Preset_Parameter = ""
+Parameter1 = "Value1"
+Parameter2 = "Value1"
+Parameter3 = "Value1"
+
+[Targets]
+Group = "Group1, Group2, Group3"
+Organization = "Org1, Org2, Org3"
+Device = "Device1, Device2, Device3"

@@ -1,0 +1,20 @@
+[ConnectWise_Manage_Ticket_Template]
+Path = "Administration > Apps > Installed > ConnectWise Manage"
+
+[Ticket_Template]
+Name = ""
+Board = ""
+Status = ""
+Priority = ""
+Type = ""
+Sub_Type = ""
+Item = ""
+Source = ""
+Team = ""
+Severity = ""
+Impact = ""
+Create_and_close_status = ""
+Ticket_Title_Contents = ""
+Body = ""
+When_Condition_is_reset = "Do not change / Change to"
+When_Condition_retriggers = "Create new ticket / Append to existent ticket (if not closed)"

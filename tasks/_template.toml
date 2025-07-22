@@ -65,8 +65,8 @@ Name = ""
 Run_As = "System / Current Logged on User / Preferred Windows Local Admin / Preferred Windows Domain Admin"
 Preset_Parameter = ""
 Parameter1 = "Value1"
-Parameter2 = "Value1"
-Parameter3 = "Value1"
+Parameter2 = "Value2"
+Parameter3 = "Value3"
 
 [Details.Automation]
 Name = ""
@@ -75,8 +75,8 @@ Name = ""
 Run_As = "System / Current Logged on User / Preferred Windows Local Admin / Preferred Windows Domain Admin"
 Preset_Parameter = ""
 Parameter1 = "Value1"
-Parameter2 = "Value1"
-Parameter3 = "Value1"
+Parameter2 = "Value2"
+Parameter3 = "Value3"
 
 [Details.Automation]
 Name = ""
@@ -85,8 +85,8 @@ Name = ""
 Run_As = "System / Current Logged on User / Preferred Windows Local Admin / Preferred Windows Domain Admin"
 Preset_Parameter = ""
 Parameter1 = "Value1"
-Parameter2 = "Value1"
-Parameter3 = "Value1"
+Parameter2 = "Value2"
+Parameter3 = "Value3"
 
 [Targets]
 Group = "Group1, Group2, Group3"

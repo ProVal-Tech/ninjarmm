@@ -1,0 +1,357 @@
+[Condition]
+Path = "Administration > Policies > Agent Policies"
+Agent_Policy = ""
+
+[Condition]
+Condition = """Antivirus Health / 
+Battery Monitoring / 
+Bitlocker Status / 
+CPU / 
+Critical Events / 
+Custom Fields / 
+Device Down / 
+Disk Active Time / 
+Disk Free Space / 
+Disk Transfer Rate / 
+Disk Usage / 
+Memory / 
+Network Utilization / 
+OS Patch CVSS Score / 
+Patch Last Installed / 
+Process / 
+Process Resource / 
+RAID Health Status / 
+Reboot Pending / 
+Script Result Condition / 
+Software / 
+System Uptime / 
+Windows Event / 
+Windows Service / 
+Windows SMART Status Degraded
+"""
+
+[Condition.Antivirus_Health]
+Antivirus_Missing = false / true
+Antivirus_Disabled = false / true
+Antivirus_Outdated = false / true
+Detect_Multiple_Antivirus_Installed = false / true
+Ignore_Microsoft_Defender_Antivirus = false / true
+Duration_Detected = "  Minutes / Hours / Days"
+
+[Condition.Battery_Monitoring]
+Monitor_Current_Batter_Charge_Level = false / true
+
+[Condition.Battery_Monitoring.Monitor_Current_Batter_Charge_Level]
+
+[Condition.Battery_Monitoring.Monitor_Current_Batter_Charge_Level.Battery_Charge_Level]
+Condition = "less than / greater than"
+Percentage = "  %"
+
+Monitor_Battery_Maximum_Capacity_Now_vs_New = false / true
+
+[Condition.Battery_Monitoring.Monitor_Battery_Maximum_Capacity_Now_vs_New]
+
+[Condition.Battery_Monitoring.Monitor_Battery_Maximum_Capacity_Now_vs_New.Battery_Capacity_Now_vs_New]
+Condition = "less than / greater than"
+Percentage = "  %"
+
+Monitor_Number_of_Battery_Cycles = false / true
+
+[Condition.Battery_Monitoring.Monitor_Number_of_Battery_Cycles]
+
+[Condition.Battery_Monitoring.Monitor_Number_of_Battery_Cycles.Battery_Cycles]
+Condition = "less than / greater than"
+Value = ""
+
+[Condition.Bitlocker_Status]
+Status = "Enabled / Disabled / Locked / Unlocked"
+Duration = " Minute(s)"
+Exclude_Boot_Volume = false / true
+Exclude_Removable_Disk = false / true
+Exclude_Volume_Labels = ""
+
+[Condition.CPU]
+Operator = "greater than or equal to / less than or equal to / less than / greater than / equal to / not equal to"
+Threshold_Percent = ""
+Duration = "5 minutes / 15 minutes / 30 minutes / 60 minutes"
+
+[Condition.Critical_Events]
+Event_Limit = ""
+Duration = "5 minutes / 15 minutes / 30 minutes / 60 minutes"
+Exclude_error_events = false / true
+
+[Condition.Custom_Fields]
+
+[Condition.Custom_Fields.Custom_field_value_must_meet_all_conditions]
+Custom_field = ""
+Condition = "Contains / Contains none / Equals / Does not equal / Exists / Doesn't exist"
+Text = ""
+Dropdown_value = ""
+Checkbox_value = false / true
+
+[Condition.Custom_Fields.Custom_field_value_must_meet_all_conditions]
+Custom_field = ""
+Condition = "Contains / Contains none / Equals / Does not equal / Exists / Doesn't exist"
+Text = ""
+Dropdown_value = ""
+Checkbox_value = false / true
+
+[Condition.Custom_Fields.Custom_field_value_must_meet_all_conditions]
+Custom_field = ""
+Condition = "Contains / Contains none / Equals / Does not equal / Exists / Doesn't exist"
+Text = ""
+Dropdown_value = ""
+Checkbox_value = false / true
+
+[Condition.Custom_Fields.Custom_field_value_must_meet_any_conditions]
+Custom_field = ""
+Condition = "Contains / Contains none / Equals / Does not equal / Exists / Doesn't exist"
+Text = ""
+Dropdown_value = ""
+Checkbox_value = false / true
+
+[Condition.Custom_Fields.Custom_field_value_must_meet_any_conditions]
+Custom_field = ""
+Condition = "Contains / Contains none / Equals / Does not equal / Exists / Doesn't exist"
+Text = ""
+Dropdown_value = ""
+Checkbox_value = false / true
+
+[Condition.Custom_Fields.Custom_field_value_must_meet_any_conditions]
+Custom_field = ""
+Condition = "Contains / Contains none / Equals / Does not equal / Exists / Doesn't exist"
+Text = ""
+Dropdown_value = ""
+Checkbox_value = false / true
+
+[Condition.Device_Down]
+Duration = "  Minutes / Hours / Days"
+Trigger_again_if_condition_is_still_true_after_reset = false / true
+
+[Condition.Disk_Active_Time]
+Operator = "greater than or equal to / less than or equal to / less than / greater than / equal to / not equal to"
+Threshold_Percent = ""
+Duration = "5 minutes / 15 minutes / 30 minutes / 60 minutes"
+
+[Condition.Disk_Free_Space]
+Operator = "greater than or equal to / less than or equal to / less than / greater than / equal to / not equal to"
+Threshold = "  Percent (%) / Kilobyte / Megabyte / Gigabyte / Terabyte"
+Duration = "  minutes / hours"
+System_Uptime_Delay = "  minutes / hours"
+Boot_Volume_Only = false / true
+Volume_labels_mode = "None / Exclude / Include"
+Exclude_volume_labels = ""
+Include_volume_labels = ""
+Exclude_removable_disks = false / true
+Exclude_boot_volume = false / true
+
+[Condition.Disk_Transfer_Rate]
+Direction = "Read Speed / Write Speed / Read & Write Speed"
+Operator = "greater than or equal to / less than or equal to / less than / greater than / equal to / not equal to"
+Threshold_Bytes = ""
+Unit_Bytes = "KiBps / MiBps / GiBps / TiBps"
+Duration = "5 minutes / 15 minutes / 30 minutes / 60 minutes"
+
+[Condition.Disk_Usage]
+Operator = "greater than or equal to / less than or equal to / less than / greater than / equal to / not equal to"
+Threshold = "  Percent (%) / Kilobyte / Megabyte / Gigabyte / Terabyte"
+Duration = "  minutes / hours"
+System_Uptime_Delay = "  minutes / hours"
+Boot_Volume_Only = false / true
+Volume_labels_mode = "None / Exclude / Include"
+Exclude_volume_labels = ""
+Include_volume_labels = ""
+Exclude_removable_disks = false / true
+Exclude_boot_volume = false / true
+
+[Condition.Memory]
+Operator = "greater than or equal to / less than or equal to / less than / greater than / equal to / not equal to"
+Unit = "% / Byte"
+
+[Condition.Memory.Unit]
+
+[Condition.Memory.Unit.%]
+Threshold_Percent = ""
+
+[Condition.Memory.Unit.Byte]
+Threshold_Bytes = ""
+Unit_Bytes = "Kilo / Mega / Giga / Tera"
+
+Duration = "5 minutes / 15 minutes / 30 minutes / 60 minutes"
+
+[Condition.Network_Utilization]
+Direction = "In Bytes / Out Bytes / In & Out Bytes"
+Operator = "greater than or equal to / less than or equal to / less than / greater than / equal to / not equal to"
+Threshold_Bytes = ""
+Unit_Bytes = "KiBps / MiBps / GiBps / TiBps"
+Duration = "5 minutes / 15 minutes / 30 minutes / 60 minutes"
+
+[Condition.OS_Patch_CVSS_Score]
+Operator = "greater than or equal to / greater than"
+Threshold_CVSS_Score = ""
+Duration_Days = ""
+Include_Rejected_Patches = false / true
+
+[Condition.Patch_Last_Installed]
+Patch_Type = "Operating System / 3rd Party Software"
+Days = "1 / 7 / 15 /30 / 60 / 90 / 120"
+Ninja_Update_Engine_Only = false / true
+
+[Condition.Process]
+Process = "Process1, Process2, Process3"
+State = "Exists / Doesn't Exist / Up / Down"
+System_Uptime_Delay = "  minutes / hours"
+
+[Condition.ProcessResource]
+Process = "Process1, Process2, Process3"
+Resource = "CPU / Memory"
+
+[Condition.ProcessResource.Resource]
+
+[Condition.ProcessResource.Resource.CPU]
+Operator = "greater than or equal to / less than or equal to / less than / greater than / equal to / not equal to"
+Threshold_Percent = ""
+Duration = "5 minutes / 15 minutes / 30 minutes / 60 minutes"
+
+[Condition.ProcessResource.Resource.Memory]
+Operator = "greater than or equal to / less than or equal to / less than / greater than / equal to / not equal to"
+Unit = "% / Byte"
+
+[Condition.ProcessResource.Resource.Memory.Unit]
+
+[Condition.ProcessResource.Resource.Memory.Unit.%]
+Threshold_Percent = ""
+
+[Condition.ProcessResource.Resource.Memory.Unit.Byte]
+Threshold_Bytes = ""
+Unit_Bytes = "Kilo / Mega / Giga / Tera"
+
+Duration = "5 minutes / 15 minutes / 30 minutes / 60 minutes"
+
+[Condition.RAID_Health_Status]
+Controller = "Ignore / Critical Only / Critical and Non-Critical"
+Virtual_Drives = "Ignore / Critical Only / Critical and Non-Critical"
+Physical_Drives = "Ignore / Critical Only / Critical and Non-Critical"
+Battery_Backup = "Ignore / Critical Only / Critical and Non-Critical"
+
+[Condition.Reboot_Pending]
+Reboot_has_been_pending_for_a_time_period = false / true
+Duration = "  Minutes / Hours / Days"
+Users_have_been_idle_for_a_time_period = false / true
+Duration = "  Minutes / Hours / Days"
+
+[Condition.Script_Result_Condition]
+
+[Condition.Script_Result_Condition.Evaluation_script]
+Evaluation_script = ""
+
+[Condition.Script_Result_Condition.Evaluation_script.Parameters]
+Run_As = "System / Current Logged on User / Preferred Windows Local Admin / Preferred Windows Domain Admin"
+Preset_Parameter = ""
+Parameter1 = "Value1"
+Parameter2 = "Value1"
+Parameter3 = "Value1"
+
+[Condition.Script_Result_Condition.Run_Every]
+Hour = ""
+Minutes = ""
+
+[Condition.Script_Result_Condition.Timeout]
+Hour = ""
+Minutes = ""
+
+[Condition.Script_Result_Condition.Result_Code]
+Operator = "not equal to / greater than or equal to / less than or equal to / greater than / less than / equal to / any"
+Result_Code = ""
+
+[Condition.Script_Result_Condition.With_Output]
+Text = ""
+Operator = "Contains / Not Empty / Does not contain / Stats / Ends / Regular Expression"
+
+[Condition.Script_Result_Condition.Script_error_notification]
+Script_error_notification = false / true
+Operator = "not equal to / greater than or equal to / less than or equal to / greater than / less than / equal to / any"
+Result_Code = ""
+
+[Condition.Software]
+Presence = "Exists / Doesn't exist"
+Names = "Software1, Software2, Software3"
+
+[Condition.System_Uptime]
+Days = ""
+
+[Condition.Windows_Event]
+Source_Provider_Name = ""
+Event_IDs = "ID1, ID2, ID3"
+Text = "Filter1, Filter2, Filter3"
+Operator = "Contains / Doesn't Contain"
+Result = "All / Any"
+Occurrence_count = true / false
+If_the_events_trigger = "  times or more"
+within = "5 minutes / 15 minutes / 30 minutes / 60 minutes"
+
+[Condition.Windows_Service]
+Service = "Service1, Service2, Service3"
+State = "Up / Down / Exists / Doesn't Exist"
+System_Uptime_Delay = "  minutes / hours"
+Ignore_if_service_is_disabled = false / true
+Ignore_if_service_is_manual = false / true
+Trigger_again_if_condition_is_still_true_after_reset = false / true
+
+[Condition.Windows_SMART_Status_Degraded]
+Pred_Fail = false /true
+
+[General]
+Name = ""
+Severity = "Critical / Major / Moderate / Minor / None"
+Priority = "High / Medium / Low / None"
+
+[General.Auto-reset]
+After = false / true
+Reset_Interval = "90  seconds / 3 minutes / 6 minutes / 12 minutes / 18 minutes / 20 minutes / 30 minutes / 1 hour / 2 hours / 4 hours / 8 hours / 12 hours / 24 hours"
+When_no_longer_met = false /true
+
+Channel = "Channel1, Channel2, Channel3"
+Notify_Technicians = "Do not send notifications / Send notifications"
+Notify_on_reset = false / true
+Channels = "Channel1, Channel2, Channel3"
+ConnectWise = "Do not create a ticket / Create a ticket / Create and close a ticket"
+
+[Notifications.ConnectWise.Create_a_ticket]
+Ticket_Template = ""
+
+[Notifications.ConnectWise.Create_and_close_a_ticket]
+Ticket_Template = ""
+
+Ticketing_Rule = "Off / Create with Default"
+
+[Automations]
+[Automations.Automation]
+Name = ""
+
+[Automations.Automation.Parameters]
+Run_As = "System / Current Logged on User / Preferred Windows Local Admin / Preferred Windows Domain Admin"
+Preset_Parameter = ""
+Parameter1 = "Value1"
+Parameter2 = "Value2"
+Parameter3 = "Value3"
+
+[Automations.Automation]
+Name = ""
+
+[Automations.Automation.Parameters]
+Run_As = "System / Current Logged on User / Preferred Windows Local Admin / Preferred Windows Domain Admin"
+Preset_Parameter = ""
+Parameter1 = "Value1"
+Parameter2 = "Value2"
+Parameter3 = "Value3"
+
+[Automations.Automation]
+Name = ""
+
+[Automations.Automation.Parameters]
+Run_As = "System / Current Logged on User / Preferred Windows Local Admin / Preferred Windows Domain Admin"
+Preset_Parameter = ""
+Parameter1 = "Value1"
+Parameter2 = "Value2"
+Parameter3 = "Value3"

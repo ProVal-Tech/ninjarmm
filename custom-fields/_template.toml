@@ -1,0 +1,133 @@
+[Custom_Field]
+Path = """Administration > Devices > Device Custom Fields / 
+Administration > Organizations > Organization Custom Fields / 
+Administration > Organizations > Location Custom Fields / 
+Administration > Accounts > End User Custom Fields
+"""
+Type = """
+Attachment / 
+Checkbox / 
+Date / 
+Date/Time / 
+Decimal / 
+Device Dropdown / 
+Device multi-select / 
+Drop-down / 
+Email / 
+Integer / 
+IP Address / 
+Multi-line / 
+Multi-select / 
+Organization dropdown / 
+Organization Location dropdown / 
+Organization Location multi-select / 
+Organization multi-select / 
+Phone / 
+Secure / 
+Text / 
+Time / 
+URL / 
+WYSIWYG
+"""
+
+[Overview]
+Custom_field_type = ""
+Label = ""
+Name = ""
+Custom_field_is_required = false / true
+
+[Inheritance]
+Device = false / true
+End_User = false / true
+Location = false / true
+Organization = false / true
+
+[Permissions]
+Automation = "None / Read Only / Write Only / Read_Write"
+API = "None / Read Only / Write Only / Read_Write""
+Technician_access = "None / Read Only / Editable"
+
+[Details]
+Description = ""
+Tooltip_text = ""
+Footer_text = ""
+
+[Advanced_Settings]
+
+[Advanced_Settings.Attachment]
+File_Max_Size_MB = ""
+Accepted_file_types = ""
+
+[Advanced_Settings.Date]
+Filter_Date_Option = ""
+
+[Advanced_Settings.Date/Time]
+Filter_Date_Option = ""
+
+[Advanced_Settings.Decimal]
+Minimum_numeric_value = ""
+Maximum_numeric_value = ""
+
+[Advanced_Settings.Device_Dropdown]
+Organizations = ""
+Device_Class = ""
+
+[Advanced_Settings.Device_multi-select]
+Organizations = ""
+Device_Class = ""
+
+[Advanced_Settings.Drop-down]
+Option_Value = "Option 1, Option 2, Option 3"
+
+[Advanced_Settings.Integer]
+Minimum_numeric_value = ""
+Maximum_numeric_value = ""
+
+[Advanced_Settings.Integer]
+IP_Address_Type = "All / IPv4 / IPv6"
+
+[Advanced_Settings.Multi-select]
+Option_Value = "Option 1, Option 2, Option 3"
+
+[Advanced_Settings.Organization_Location_dropdown]
+Organizations = ""
+
+[Advanced_Settings.Organization_Location_multi-select]
+Organizations = ""
+
+[Advanced_Settings.Secure]
+Max_characters = ""
+
+[Advanced_Settings.Secure.Complexity_Rules]
+Must_contain_one_integer = false / true
+Must_contain_one_uppercase_letter = false / true
+Must_contain_one_lowercase_letter = false / true
+Must_contain_at_least_six_characters = false / true
+
+[Advanced_Settings.WYSIWYG]
+Expand_large_values_on_render = false / true
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = ""
+Custom_Field_Tab_Name = ""
+
+[Device_Custom_Fields.Role]
+Role_Name = ""
+Custom_Field_Tab_Name = ""
+
+[Device_Custom_Fields.Role]
+Role_Name = ""
+Custom_Field_Tab_Name = ""
+
+[Organization_Custom_Fields]
+Custom_Field_Tab_Name = ""
+
+[Location_Custom_Fields]
+Custom_Field_Tab_Name = ""
+
+[End_User_Custom_Fields]
+Custom_Field_Tab_Name = ""

@@ -285,7 +285,7 @@ if (($MaxUptimeDays -match '^[0-9]{1,}$') -and ($NotificationType -match 'Pendin
     $MaxUptimeDays = ''
 }
 
-if (($ADPasswordExpirationDays -match '^[0-9]{1,}$') -and (($ADPasswordExpirationDays).length -gt 2) -and ($NotificationType -match 'ADPasswordExpiration')) {
+if (($ADPasswordExpirationDays -match '^[0-9]{1,}$') -and (($ADPasswordExpirationDays).length -ge 1) -and ($NotificationType -match 'ADPasswordExpiration')) {
     $ADPasswordExpirationDays = $ADPasswordExpirationDays
 } else {
     $ADPasswordExpirationDays = ''

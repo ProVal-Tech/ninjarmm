@@ -99,7 +99,7 @@
     name = "LogoImage"
     description = "LogoImage stores the URL or local path for the logo image in the notification. Leave it blank to generate the notification with the default logo."
     type = "String/Text"
-    mandatory = false
+    mandatory = false$
     default_value = ""
 
     [[script.HeroImage]]
@@ -111,7 +111,7 @@
 
     [[script.Deadline]]
     name = "Deadline"
-    description = "Sets the deadline for the notification. Format: yyyy-MM-dd HH:mm:ss."
+    description = "Sets the deadline for the notification. Format: yyyy-MM-dd HH:mm:ss. Note that RunScriptButton and Deadline cannot be enabled at the same time. Additionally, enabling RunScriptButton will automatically disable Deadline."
     type = "String/Text"
     mandatory = false
     default_value = ""
@@ -273,7 +273,7 @@ if (($HeroImage).length -gt 2) {
     $HeroImage = ''
 }
 
-if ($Deadline -match '\d{4}-\d{2}-\d{2}') {
+if ($Deadline -match '\d{4}-\d{2}-\d{2}' -and $RunScriptButton -eq $false) {
     $Deadline = [datetime]$Deadline
 } else {
     $Deadline = ''
@@ -396,7 +396,6 @@ if ($parameters) {
 }
 #endregion
 
-#region Log Verification
 if (!(Test-Path $LogPath)) {
     return 'PowerShell Failure. A Security application seems to have restricted the execution of the PowerShell Script.'
 }
@@ -408,4 +407,3 @@ if (Test-Path $ErrorLogPath) {
     $ErrorContent = (Get-Content -Path $ErrorLogPath)
     return ($ErrorContent | Out-String)
 }
-#endRegion

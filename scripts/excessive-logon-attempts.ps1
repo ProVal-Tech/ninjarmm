@@ -51,7 +51,7 @@ Begin {
     if (!$minutes -or $minutes -le 0) {
         $minutes = 60
     }
-    $StartTime = (Get-Date).AddHours(-$minutes)
+    $StartTime = (Get-Date).AddMinutes(-$minutes)
 
     $filter = @{
         LogName   = 'Security'
@@ -68,7 +68,7 @@ Begin {
 
     $total = ($filteredEvents | Measure-Object).Count
 
-    if ($total -ge $th) {
+    if ($total -ge $threshold) {
         $groupedEvents = $filteredEvents |
             Where-Object { $_.Properties.Value -match '\S' } |
             Group-Object @{ Expression = { $_.Properties.Value } }, @{ Expression = { $_.Properties.Value } }
@@ -114,7 +114,7 @@ Begin {
 } end {
     if ($output) {
         Write-Output @"
-$($total) failed logon event logs detected in the past $($hours) hour(s).
+$($total) failed logon event logs detected in the past $($minutes) minute(s).
 $($Output | Out-String)
 Logon Type Reference Table:
 

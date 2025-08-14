@@ -1,0 +1,50 @@
+[Compound_Condition]
+Path = "Administration > Policies > Agent Policies"
+Agent_Policy = "Windows Workstation"
+
+[Conditions]
+Trigger_when = "all conditions are true"
+
+[Conditions.Software]
+Software_name = "Online Backup"
+Trigger_when = "Any Software"
+Condition = "Doesn't exist"
+
+[Conditions.Custom_Fields]
+
+[Conditions.Custom_Fields.Custom_field_value_must_meet_ALL_conditions]
+Custom_field = "cpVAL Deploy MSP 360"
+Condition = "Does not equal"
+Dropdown_value = "Disabled"
+
+[Conditions.Custom_Fields.Custom_field_value_must_meet_ANY_conditions]
+Custom_field = "cpVAL Deploy MSP 360"
+Condition = "equals"
+Dropdown_value = "Windows Workstations"
+
+[Conditions.Custom_Fields.Custom_field_value_must_meet_ANY_conditions]
+Custom_field = "cpVAL Deploy MSP 360"
+Condition = "equals"
+Dropdown_value = "Windows Servers and Windows Workstations"
+
+[Automations]
+
+[Automations.Automation]
+Name = "Install MSP360 Online Backup"
+
+[Automations.Automation.Parameters]
+Run_As = "System"
+Preset_Parameter = ""
+
+[Settings]
+Name = "Install MSP 360 Online Backup"
+
+[Settings.Auto_Reset]
+After = true
+Reset_Interval = "4 hours"
+When_no_longer_met = true
+
+Run_Every = "30 minutes"
+
+[Settings.Trigger_uptime]
+Trigger_uptime = false

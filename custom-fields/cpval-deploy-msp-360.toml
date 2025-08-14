@@ -1,0 +1,55 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Drop-down"
+
+[Overview]
+Custom_field_type = "Dropdown"
+Label = "cPVAL Deploy MSP 360"
+Name = "cpvalDeployMsp360"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = true
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Select Operating System to deploy MSP 360 Online Backup Agent."
+Tooltip_text = "Select Operating System to deploy MSP 360 Online Backup Agent."
+Footer_text = "Deploy MSP 360"
+
+[Advanced_Settings]
+
+[Advanced_Settings.Drop-down]
+Option_Value = """
+Disabled
+Windows Servers
+Windows Workstations
+Windows Servers and Windows Workstation
+"""
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Windows Desktops and Laptops"
+Custom_Field_Tab_Name = "Default fields"
+
+[Device_Custom_Fields.Role]
+Role_Name = "Windows Server"
+Custom_Field_Tab_Name = "Default fields"
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Fields > Manage tabs"
+Custom_Field_Tab_Name = "MSP 360 Online Backup"
+
+[Location_Custom_Fields]
+Path = "Administration > Organizations > Location Custom Fields > Edit Custom Fields > Manage tabs"
+Custom_Field_Tab_Name = "MSP 360 Online Backup"

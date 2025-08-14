@@ -1,6 +1,6 @@
 [Compound_Condition]
 Path = "Administration > Policies > Agent Policies"
-Agent_Policy = "Windows Server"
+Agent_Policy = "Windows Workstation [Default]"
 
 [Conditions]
 Trigger_when = "all conditions are true"
@@ -20,7 +20,7 @@ Dropdown_value = "Disabled"
 [Conditions.Custom_Fields.Custom_field_value_must_meet_ANY_conditions]
 Custom_field = "cpVAL Deploy MSP 360"
 Condition = "equals"
-Dropdown_value = "Windows Servers"
+Dropdown_value = "Windows Workstations"
 
 [Conditions.Custom_Fields.Custom_field_value_must_meet_ANY_conditions]
 Custom_field = "cpVAL Deploy MSP 360"
@@ -37,7 +37,7 @@ Run_As = "System"
 Preset_Parameter = ""
 
 [Settings]
-Name = "Install MSP 360 Online Backup"
+Name = "Install MSP 360 Online Backup - Windows Workstation"
 
 [Settings.Auto_Reset]
 After = true

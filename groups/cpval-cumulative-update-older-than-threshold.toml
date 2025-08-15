@@ -1,0 +1,16 @@
+[Group]
+Path = "Administration > Device > Groups"
+
+[Filters]
+
+[Filters.More_filters.Device.Custom_Fields]
+
+[Filters.More_filters.Device.Custom_Fields.Has_all_conditions]
+Custom_field = "cPVAL Cumulative Update Audit Status"
+Condition = "Contains"
+Text = "Failed"
+
+[Save_device_group]
+Name = "cPVAL Cumulative Update Older than 'threshold' Days"
+Description = "Lists out the machines which has Cumulative Update Installed older than 'threshold' days."
+Permission_type = "Self (Private) ━━ default"

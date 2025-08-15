@@ -1,0 +1,37 @@
+[Custom_Field]
+Path = "Administration > Devices > Device Custom Fields"
+Type = "Text"
+
+[Overview]
+Custom_field_type = "Text"
+Label = "cPVAL Cumulative Update Audit Status"
+Name = "cpvalCumulativeUpdateAuditStatus"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = false
+Organization = false
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Read Only"
+
+[Details]
+Description = "Shows the most recently installed Windows Cumulative Update. Useful for verifying patch status and update compliance."
+Tooltip_text = "Current Cumulative Update"
+Footer_text = ""
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Windows Desktops and Laptops"
+Custom_Field_Tab_Name = "Defalt fields"
+
+[Device_Custom_Fields.Role]
+Role_Name = "Windows Server"
+Custom_Field_Tab_Name = "Default fields"

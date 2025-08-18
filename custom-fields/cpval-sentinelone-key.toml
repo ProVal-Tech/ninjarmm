@@ -26,4 +26,4 @@ Footer_text = "SentinelOne Installation token."
 
 [Organization_Custom_Fields]
 Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Fields > Manage tabs"
-Custom_Field_Tab_Name = "cPVAL SentinelOne Key"
+Custom_Field_Tab_Name = "SentinelOne"

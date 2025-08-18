@@ -1,0 +1,26 @@
+[Custom_Field]
+Path = """Administration > Organizations > Organization Custom Fields / """
+
+Type = """Text"""
+
+[Overview]
+Custom_field_type = "Text"
+Label = "cPVAL Zorus Token Key"
+Name = "cpvalZorusTokenKey"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = false
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write""
+Technician_access = "Editable"
+
+[Details]
+Description = "Deployment token generated within the Zorus portal, for deploying the Zorus agent."
+Tooltip_text = ""
+Footer_text = ""

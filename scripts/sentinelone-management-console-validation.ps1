@@ -41,7 +41,7 @@
 .NOTES
     [script]
     name = "SentinelOne Management Console Validation"
-    description = "The task validates whether the SentinelOne Management Server detected on the computer is different from what is set for the Client in NinjaRMM."
+    description = "The script validates whether the SentinelOne Management Server detected on the computer is different from what is set for the Client in NinjaRMM."
     categories = ["ProVal"]
     language = "PowerShell"
     operating_system = "Windows"

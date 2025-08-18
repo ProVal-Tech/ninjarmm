@@ -52,6 +52,6 @@ Notify_Technicians = "Do not send notifications"
 ConnectWise = "Create a ticket"
 
 [Notifications.ConnectWise.Create_a_ticket]
-Ticket_Template = "SentinelOne mgmt server url"
+Ticket_Template = "SentinelOne Management Console" # use an appropriate ticket template
 
 Ticketing_Rule = "Off"

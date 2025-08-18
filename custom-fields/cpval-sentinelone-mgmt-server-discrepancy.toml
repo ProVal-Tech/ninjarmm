@@ -1,0 +1,37 @@
+[Custom_Field]
+Path = "Administration > Devices > Device Custom Fields"
+Type = "Checkbox"
+
+[Overview]
+Custom_field_type = "Checkbox"
+Label = "cPVAL SentinelOne Mgmt Server Discrepancy"
+Name = "cpvalSentineloneMgmtServerDiscrepancy"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = false
+Organization = false
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "If the S1 Management URL on the endpoint matches the value stored in the NinjaOne custom field, or if there is any discrepancy between the two."
+Tooltip_text = "If the S1 Management URL on the endpoint matches the value stored in the NinjaOne custom field, or if there is any discrepancy between the two."
+Footer_text = "SentinelOne Mgmt Server Discrepancy"
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Windows Desktops and Laptops"
+Custom_Field_Tab_Name = "SentinelOne Management Server Url Wks"
+
+[Device_Custom_Fields.Role]
+Role_Name = "Windows Server"
+Custom_Field_Tab_Name = "SentinelOne Management Server Url Svr"

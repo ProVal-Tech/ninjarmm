@@ -1,0 +1,57 @@
+[Condition]
+Path = "Administration > Policies > Agent Policies"
+Agent_Policy = """
+Windows Workstation
+Windows Server
+"""
+
+[Condition]
+Condition = "Script Result Condition"
+
+[Condition.Script_Result_Condition]
+
+[Condition.Script_Result_Condition.Evaluation_script]
+Evaluation_script = "SentinelOne Management Console Validation"
+
+[Condition.Script_Result_Condition.Evaluation_script.Parameters]
+Run_As = "System"
+Preset_Parameter = ""
+S1_Key_Custom_Field_Name = ""   # Name of the client-level custom field used to store the SentinelOne installation key. Default is 'cPVAL SentinelOne Key'
+
+[Condition.Script_Result_Condition.Run_Every]
+Hour = "24"
+Minutes = "0"
+
+[Condition.Script_Result_Condition.Timeout]
+Hour = "0"
+Minutes = "5"
+
+[Condition.Script_Result_Condition.Result_Code]
+Operator = "equal to"
+Result_Code = "1"
+
+[Condition.Script_Result_Condition.With_Output]
+Text = "Client Level and Computer Level Management Server Url do not match"
+Operator = "Contains"
+
+[Condition.Script_Result_Condition.Script_error_notification]
+Script_error_notification = false
+
+[General]
+Name = "SentinelOne Management Console Validation"
+Severity = "Moderate"
+Priority = "Medium"
+
+[General.Auto-reset]
+After = false
+Reset_Interval = ""
+When_no_longer_met = true
+
+Channel = ""
+Notify_Technicians = "Do not send notifications"
+ConnectWise = "Create a ticket"
+
+[Notifications.ConnectWise.Create_a_ticket]
+Ticket_Template = "SentinelOne mgmt server url"
+
+Ticketing_Rule = "Off"

@@ -47,9 +47,9 @@ Role_Name = "Windows Server"
 Custom_Field_Tab_Name = "Default fields"
 
 [Organization_Custom_Fields]
-Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Fields > Manage tabs"
+Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Tabs > Manage tabs"
 Custom_Field_Tab_Name = "MSP 360 Online Backup"
 
 [Location_Custom_Fields]
-Path = "Administration > Organizations > Location Custom Fields > Edit Custom Fields > Manage tabs"
+Path = "Administration > Organizations > Location Custom Fields > Edit Custom Tabs > Manage tabs"
 Custom_Field_Tab_Name = "MSP 360 Online Backup"

@@ -25,5 +25,5 @@ Tooltip_text = "MBS backup agent URL. Copy the link from MBS portal in Downloads
 Footer_text = "MSP 360 Url"
 
 [Organization_Custom_Fields]
-Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Fields > Manage tabs"
+Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Tabs > Manage tabs"
 Custom_Field_Tab_Name = "MSP 360 Online Backup"

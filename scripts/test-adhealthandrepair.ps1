@@ -16,11 +16,11 @@ This script automates health checks, self-healing, and conditional service resta
 - Queries Windows event logs for recent critical or error events in DNS Server and Directory Service logs.
 - Logs all findings and outcomes.
 - If issues are detected and self-healing is enabled, runs remediation steps:
-- Synchronizes AD replication.
-- Flushes DNS resolver cache.
-- Reregisters DNS records.
-- Updates domain controller DNS registration.
-- If issues are detected and SelfHeal is enabled, restarts all or selected AD-related services as specified by parameters.
+    - Synchronizes AD replication.
+    - Flushes DNS resolver cache.
+    - Reregisters DNS records.
+    - Updates domain controller DNS registration.
+- If issues are detected and Self-Heal is enabled, restarts all or selected AD-related services as specified by parameters.
 - Logs the outcome of each service restart and remediation step.
 - Updates and stores the script run time for future audits.
 
@@ -36,21 +36,19 @@ This script automates health checks, self-healing, and conditional service resta
 
     [[script.variables]]
     name = "SelfHeal"
-    description = "Initiates self-healing actions if AD issues are detected.Leave it blank to disable self-healing for the AD health issue fix, or set any value, such as 1, to enable the self-healing feature."
+    description = "Initiates self-healing actions if AD issues are detected. Leave it blank to disable self-healing for the AD health issue fix, or set any value, such as 1, to enable the self-healing feature."
     type = "String/Text"
     mandatory = false
     default_value = ""
-    option_values = [1]
-    top_option_is_default = false
+  
 
     [[script.variables]]
     name = "RestartAllADService"
-    description = "Restarts all core AD-related services if issues are detected and SelfHeal is enabled.Leave it blank for no action, or set it to any value to allow all AD services to restart. Note: The SelfHeal parameter must be enabled for this feature to operate."
+    description = "Restarts all core AD-related services if issues are detected and SelfHeal is enabled. Leave it blank for no action, or set it to 1 to allow all AD services to restart. Note: The SelfHeal parameter must be enabled for this feature to operate."
     type = "String/Text"
     mandatory = false
     default_value = ""
-    option_values = [1]
-    top_option_is_default = false
+    
 
     [[script.variables]]
     name = "ServicesToRestart"
@@ -58,8 +56,7 @@ This script automates health checks, self-healing, and conditional service resta
     type = "String/Text"
     mandatory = false
     default_value = ""
-    option_values = [DNS, Netlogon]
-    top_option_is_default = false
+   
 #>
 
 # Begin block: Initialization and setup

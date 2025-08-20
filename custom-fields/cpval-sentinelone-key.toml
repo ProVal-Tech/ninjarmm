@@ -25,5 +25,5 @@ Tooltip_text = "SentinelOne Installation token."
 Footer_text = "SentinelOne Installation token."
 
 [Organization_Custom_Fields]
-Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Fields > Manage tabs"
+Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Tab > Manage tabs"
 Custom_Field_Tab_Name = "SentinelOne"

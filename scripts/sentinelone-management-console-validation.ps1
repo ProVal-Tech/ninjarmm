@@ -24,7 +24,7 @@
     - Custom field names can be customized by editing the script or setting the runtime variable.
 
 .EXAMPLE
-    S1 Key Custom Field Name = 'sentineloneKey'
+    S1 Key Custom Field Name = 'SentinelOne Key'
 
     Runs the script and compares the SentinelOne Management Server URL on the endpoint with the url fetched from the client-level key stored in 'SentinelOne Key' custom field.
 

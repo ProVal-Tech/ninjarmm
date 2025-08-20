@@ -20,8 +20,8 @@ API = "Read_Write"
 Technician_access = "Editable"
 
 [Details]
-Description = "If the S1 Management URL on the endpoint matches the value stored in the NinjaOne custom field, or if there is any discrepancy between the two."
-Tooltip_text = "If the S1 Management URL on the endpoint matches the value stored in the NinjaOne custom field, or if there is any discrepancy between the two."
+Description = "This custom field shows if the S1 Management URL on the endpoint matches the value stored in the NinjaOne custom field, or if there is any discrepancy between the two."
+Tooltip_text = "This custom field shows if the S1 Management URL on the endpoint matches the value stored in the NinjaOne custom field, or if there is any discrepancy between the two."
 Footer_text = "SentinelOne Mgmt Server Discrepancy"
 
 [Device_Custom_Fields]

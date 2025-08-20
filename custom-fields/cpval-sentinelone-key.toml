@@ -20,8 +20,8 @@ API = " Read_Write"
 Technician_access = "Editable"
 
 [Details]
-Description = "SentinelOne Installation token."
-Tooltip_text = "SentinelOne Installation token."
+Description = "Stores the Sentinel Site Key. The Site Key is used for organizing and managing endpoints based on their physical or logical network location within the organization."
+Tooltip_text = "Stores the Sentinel Site Key. The Site Key is used for organizing and managing endpoints based on their physical or logical network location within the organization."
 Footer_text = "SentinelOne Installation token."
 
 [Organization_Custom_Fields]

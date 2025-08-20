@@ -3,15 +3,15 @@
 Installs the SentinelOne agent if not already installed.
 
 .DESCRIPTION
-This script checks for the existing SentinelOne agent installation by verifying a specific registry path.
-If the agent is not installed, it downloads the correct MSI installer (based on OS architecture) from a predefined URI, 
+- This script checks for the existing SentinelOne agent installation by verifying a specific registry path.
+- If the agent is not installed, it downloads the correct MSI installer (based on OS architecture) from a predefined URI, 
 installs it silently with the provided site token, and validates the installation after execution.
 
 
 .NOTES
     [script]
     name = "SentinelOne Deployment"
-    description = "This script deploys Sentinelone agent on Windows machines."
+    description = "This script deploys Sentinel agent on Windows machines."
     categories = ["Proval"]
     language = "PowerShell"
     operating_system = "Windows"

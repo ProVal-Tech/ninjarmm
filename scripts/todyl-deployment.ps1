@@ -13,7 +13,7 @@
 .NOTES
     [script]
     name = "Todyl Deployment Script"
-    description = "This script deploys Todyl Agent on the windows machines."
+    description = "This script deploys Todyl Agent (SGN Connect) on the windows machines."
     categories = ["Proval"]
     language = "PowerShell"
     operating_system = "Windows"

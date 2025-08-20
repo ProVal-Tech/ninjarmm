@@ -1,7 +1,7 @@
 [Custom_Field]
-Path = """Administration > Organizations > Organization Custom Fields / """
+Path = "Administration > Organizations > Organization Custom Fields"
 
-Type = """Text"""
+Type = "Text"
 
 [Overview]
 Custom_field_type = "Text"
@@ -17,10 +17,14 @@ Organization = true
 
 [Permissions]
 Automation = "Read_Write"
-API = "Read_Write""
+API = "Read_Write"
 Technician_access = "Editable"
 
 [Details]
 Description = "Todyl Deployment Key for Desktop Agents"
 Tooltip_text = ""
 Footer_text = ""
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Tab > Manage tabs"
+Custom_Field_Tab_Name = "Todyl Deployment"

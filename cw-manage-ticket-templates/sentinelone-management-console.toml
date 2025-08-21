@@ -1,0 +1,32 @@
+[ConnectWise_Manage_Ticket_Template]
+Path = "Administration > Apps > Installed > ConnectWise Manage"
+
+[Ticket_Template]
+Name = "SentinelOne Management Console"
+Board = "Help Desk"
+Status = "New"
+Priority = "Priority 3 - Medium"
+Type = "MUST CHANGE" 
+Sub_Type = ""
+Item = ""
+Source = "Portal"
+Team = "Service Team"
+Severity = "Medium"
+Impact = "Medium"
+Create_and_close_status = ">Closed"
+Ticket_Title_Contents = { "Custom text", "Device Name" }
+Custom_Text = "SentinelOne Management Server Mismatch"
+When_Condition_is_reset = "Change to >> Closed"
+When_matches = ""
+When_Condition_retriggers = "Append to existent ticket (if not closed)"
+Status = "None"
+Priority = "None"
+Type = "None"
+Sub_Type = "None"
+Item = "None"
+Source = "None"
+Team = "None"
+Severity = "None"
+Impact = "None"
+
+#  The details above may differ depending on environment. Please verify the required information with consultant or partner before completing these fields.

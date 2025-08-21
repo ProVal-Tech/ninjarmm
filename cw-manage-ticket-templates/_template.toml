@@ -15,6 +15,8 @@ Severity = ""
 Impact = ""
 Create_and_close_status = ""
 Ticket_Title_Contents = ""
-Body = ""
+Custom_Text = ""
 When_Condition_is_reset = "Do not change / Change to"
 When_Condition_retriggers = "Create new ticket / Append to existent ticket (if not closed)"
+
+ # The details above may differ depending on environment. Please verify the required information with consultant or partner before completing these fields.

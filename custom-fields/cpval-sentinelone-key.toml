@@ -1,0 +1,29 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Text"
+
+[Overview]
+Custom_field_type = "Text"
+Label = "cPVAL SentinelOne Key"
+Name = "cpvalSentineloneKey"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = false
+End_User = false
+Location = false
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = " Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Stores the Sentinel Site Key. The Site Key is used for organizing and managing endpoints based on their physical or logical network location within the organization."
+Tooltip_text = "Stores the Sentinel Site Key. The Site Key is used for organizing and managing endpoints based on their physical or logical network location within the organization."
+Footer_text = "SentinelOne Installation token."
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Tab > Manage tabs"
+Custom_Field_Tab_Name = "SentinelOne"

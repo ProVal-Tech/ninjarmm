@@ -19,7 +19,7 @@ This Script validate the full version of the OS and compares it with Microsoft's
     default_value = "75"
 
     name = Custom Field Name
-    description = "Enter the Name of Custom Field where you want the Audit Result."
+    description = "Enter the Name of Custom Field where you want the Audit Result. Leave Blank to store Output to 'cpvalCumulativeUpdateAuditStatus' Custom Field"
     type = "[String/Text]"
     mandatory = false
     default_value = ""
@@ -82,10 +82,21 @@ if ( $Cuinfo -match 'Failed to gather build number|Unsupported Operating System'
     $Difference = New-TimeSpan -Start $comparereleasedate -End $CompareFormat
     $status = if ($Difference.Days -ge $ThresholdDays) { "Failed. CU Older than $ThresholdDays Days" } else { "Success. CU Newer than $ThresholdDays Days" }
     $Output = "$($status). || $($CUInfo.LastInstalledCU). || Version: $($CUInfo.OSBuild). || Date Audited: $FormattedDate"
-    if ($env:customFieldName){
-        Ninja-Property-Set $env:customFieldName $Output
+    if ($env:customFieldName) {
+        $CFName = "$env:customFieldName"
+    } else {
+        $CFName = 'cpvalCumulativeUpdateAuditStatus'
     }
-    Write-Output $Output
+    # Try to set the custom field value using the Set-NinjaProperty command
+    try {
+        Write-Output "Attempting to set Custom Field '$CFName'."
+        Set-NinjaProperty -Name $CFName -Value $Output
+        Write-Output "Successfully set Custom Field '$CFName'!"
+    } catch {
+        # If setting the custom field fails, display an error message and exit the script
+        Write-Output "[Error] $($_.Exception.Message)"
+    }
+    Write-Output "`n $Output"
 }
 
 # Using exit codes for Monitoring Conditions

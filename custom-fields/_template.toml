@@ -44,7 +44,7 @@ Organization = false / true
 
 [Permissions]
 Automation = "None / Read Only / Write Only / Read_Write"
-API = "None / Read Only / Write Only / Read_Write""
+API = "None / Read Only / Write Only / Read_Write"
 Technician_access = "None / Read Only / Editable"
 
 [Details]

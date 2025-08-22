@@ -10,7 +10,7 @@ Name = "cpvalZorusTokenKey"
 Custom_field_is_required = false
 
 [Inheritance]
-Device = true
+Device = false
 End_User = false
 Location = false
 Organization = true
@@ -21,9 +21,9 @@ API = "Read_Write"
 Technician_access = "Editable"
 
 [Details]
-Description = "Deployment token generated within the Zorus portal, for deploying the Zorus agent."
-Tooltip_text = ""
-Footer_text = ""
+Description = "Deployment token generated within the Zorus porta for deploying the Zorus agent."
+Tooltip_text = "Deployment token generated within the Zorus porta for deploying the Zorus agent."
+Footer_text = "Deployment token generated within the Zorus porta for deploying the Zorus agent."
 
 [Organization_Custom_Fields]
 Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Tab > Manage tabs"

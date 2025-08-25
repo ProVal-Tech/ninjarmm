@@ -8,9 +8,9 @@ Path = "Administration > Device > Groups"
 [Filters.More_filters.Device.Custom_Fields.Has_all_conditions]
 Custom_field = "cPVAL Cumulative Update Audit Status"
 Condition = "Contains"
-Text = "Failed. CU Older than x Days ==> Replace x with actual Threshold"
+Text = "Failed. CU Older than x Days" ==> Replace x with actual Threshold
 
 [Save_device_group]
 Name = "cPVAL Cumulative Update Older than x Days ==> Replace x with actual Threshold"
-Description = "Lists out the machines which has Cumulative Update Installed older than x days. ==> Replace x with actual Threshold"
+Description = "Lists out the machines which has Cumulative Update Installed older than x days." ==> Replace x with actual Threshold
 Permission_type = "Self (Private) ━━ default"

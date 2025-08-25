@@ -1,9 +1,9 @@
 [Custom_Field]
 Path = "Administration > Organizations > Organization Custom Fields"
-Type = "Text"
+Type = "Multi-line"
 
 [Overview]
-Custom_field_type = "Text"
+Custom_field_type = "Text_multiline"
 Label = "cPVAL MSP 360 Url"
 Name = "cpvalMsp360Url"
 Custom_field_is_required = false

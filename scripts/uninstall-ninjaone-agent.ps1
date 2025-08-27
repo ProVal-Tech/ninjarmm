@@ -413,6 +413,23 @@ Stop-Transcript
     }
     #endregion
 
+    #region Working Directory
+    if (!(Test-Path -Path $workingDirectory)) {
+    try {
+        New-Item -Path $workingDirectory -ItemType Directory -Force -ErrorAction Stop | Out-Null
+    } catch {
+        throw ('Failed to Create working directory {0}. Reason: {1}' -f $workingDirectory, $($Error[0].Exception.Message))
+    }
+    }
+
+    if (-not (((Get-Acl -Path $workingDirectory).Access | Where-Object { $_.IdentityReference -match 'EveryOne' }).FileSystemRights -match 'FullControl')) {
+        $acl = Get-Acl -Path $workingDirectory
+        $AccessRule = New-Object System.Security.AccessControl.FileSystemAccessRule('Everyone', 'FullControl', 'ContainerInherit, ObjectInherit', 'none', 'Allow')
+        $acl.AddAccessRule($AccessRule)
+        Set-Acl -Path $workingDirectory -AclObject $acl
+    }
+    #endRegion
+
     #region Write Script
     try {
         $utf8NoBomEncoding = New-Object System.Text.UTF8Encoding $False
@@ -426,6 +443,7 @@ Stop-Transcript
 
     #region Primary Task
     $taskName = 'Initiate-{0}' -f $projectName
+    Get-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue | Unregister-ScheduledTask -Confirm:$false -ErrorAction SilentlyContinue
     $Action = New-ScheduledTaskAction -Execute 'cmd.exe' -WorkingDirectory $workingDirectory -Argument ('/c start /min "" Powershell' + ' -NoLogo -ExecutionPolicy Bypass -NoProfile -NonInteractive -WindowStyle Hidden' + " -File ""$($ps1Path)""")
     $Trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddSeconds(30)
     $setting = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries
@@ -444,6 +462,7 @@ Stop-Transcript
     #region Secondary Task
     # Secondary task will remove the primary task after an hour
     $secondaryTaskName = 'Remove-{0}' -f $taskName
+    Get-ScheduledTask -TaskName $secondaryTaskName -ErrorAction SilentlyContinue | Unregister-ScheduledTask -Confirm:$false -ErrorAction SilentlyContinue
     $command = @"
 Get-ScheduledTask -TaskName $taskName | Unregister-ScheduledTask -Confirm:`$false -ErrorAction SilentlyContinue
 Get-ScheduledTask -TaskName $secondaryTaskName | Unregister-ScheduledTask -Confirm:`$false -ErrorAction SilentlyContinue
@@ -455,7 +474,13 @@ Get-ScheduledTask -TaskName $secondaryTaskName | Unregister-ScheduledTask -Confi
     $setting = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries
     $principal = New-ScheduledTaskPrincipal -UserId 'NT AUTHORITY\SYSTEM' -RunLevel Highest
     $ScheduledTask = New-ScheduledTask -Action $Action -Trigger $Trigger -Settings $setting -Principal $principal
-    Register-ScheduledTask -TaskName $secondaryTaskName -InputObject $ScheduledTask | Out-Null
+    try {
+      Register-ScheduledTask -TaskName $secondaryTaskName -InputObject $ScheduledTask -ErrorAction Stop | Out-Null
+    } catch {
+        Write-Output ('Failed to schedule the secondary task {1}. Reason: {0}.' -f $($Error[0].Exception.Message), $secondaryTaskName)
+        $failureCount += 1
+        $failures += ('Failed to schedule the secondary task {1}. Reason: {0}.' -f $($Error[0].Exception.Message), $secondaryTaskName)
+    }
     #endRegion
 } end {
     #region Validation

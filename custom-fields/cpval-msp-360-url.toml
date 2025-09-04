@@ -1,0 +1,29 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Multi-line"
+
+[Overview]
+Custom_field_type = "Text_multiline"
+Label = "cPVAL MSP 360 Url"
+Name = "cpvalMsp360Url"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = false
+End_User = false
+Location = false
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "MBS backup agent URL. Copy the link from MBS portal in Downloads section."
+Tooltip_text = "MBS backup agent URL. Copy the link from MBS portal in Downloads section."
+Footer_text = "MSP 360 Url"
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Tabs > Manage tabs"
+Custom_Field_Tab_Name = "MSP 360 Online Backup"

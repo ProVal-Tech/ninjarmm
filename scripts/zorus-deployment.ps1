@@ -19,72 +19,99 @@
     operating_system = "Windows"
     architecture = "All"
     run_as = "System"
-
 #>
 
 Begin {
-    $Token = Ninja-Property-Get 'cpvalZorusTokenKey';
-    $Password = Ninja-Property-Get 'cpvalZorusUninstallationPassword';
-    $addRemove = 0;
+    $Token     = Ninja-Property-Get -Type Organization -Name 'cpvalZorusTokenKey'
+    $Password  = Ninja-Property-Get -Type Organization -Name 'cpvalZorusUninstallationPassword'
+    $HideFromAddRemove = 1   # Default to hide from Add/Remove programs (0 = show, 1 = hide)
 
     $originalProtocol = [System.Net.ServicePointManager]::SecurityProtocol
-    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::'SystemDefault'
+    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::SystemDefault
 
-    # Determine whether or not the agent is already installed
-    $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall"
-    foreach($obj in $InstalledSoftware)
-    {
-        if ($obj.GetValue('DisplayName') -match "Archon")
-        {
-            Throw "Zorus Deployment Agent is already installed. Exiting."
-        }
-    }
 
-    # Token Must be Set
-    if ([string]::IsNullOrEmpty($Token))
-    {
+
+    # --- Token Must be Set ---
+    if ([string]::IsNullOrEmpty($Token)) {
         Throw "Deployment token not provided. Exiting."
     }
 
-    $source = "https://static.zorustech.com/downloads/ZorusInstaller.exe"
-    $ProjectName = 'Zorus'
+    $source       = "https://static.zorustech.com/downloads/ZorusInstaller.exe"
+    $ProjectName  = 'Zorus'
     $WorkingDirectory = "C:\ProgramData\_automation\script\$ProjectName"
-    $destination = "$WorkingDirectory\ZorusInstaller.exe"
+    $destination  = Join-Path $WorkingDirectory "ZorusInstaller.exe"
 }
 
 Process {
-    # Create working directory if it does not exist
+    # --- Ensure working directory exists ---
     if (-not (Test-Path -Path $WorkingDirectory)) {
-        New-Item -ItemType Directory -Path $WorkingDirectory | Out-Null
+        New-Item -ItemType Directory -Path $WorkingDirectory -Force | Out-Null
     }
 
-    # Download the installer
-    Write-Information "Downloading Zorus Deployment Agent..."
-
+    # --- Download the installer ---
+    Write-Output "Downloading Zorus Deployment Agent..."
     try {
-        Invoke-WebRequest -Uri $source -OutFile $destination
+        Invoke-WebRequest -Uri $source -OutFile $destination -UseBasicParsing
     }
     catch {
-        throw "Failed to download installer. Exiting."
+        Throw "Failed to download installer from $source. Exiting."
     }
 
-    $arguments = "/qn", "ARCHON_TOKEN=$Token", "HIDE_ADD_REMOVE=$HideFromAddRemove"
-    if (-not [string]::IsNullOrEmpty($Password)) {
-        $arguments += "UNINSTALL_PASSWORD=$Password"
-        Write-Information "Installing Zorus Deployment Agent with password..."
+    # --- Check installed version (if any) ---
+    $installedVersion = Get-ChildItem -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall',
+                                             'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall' -ErrorAction SilentlyContinue |
+                        Get-ItemProperty |
+                        Where-Object { $_.DisplayName -match 'Archon' } |
+                        Select-Object -ExpandProperty DisplayVersion -First 1 -ErrorAction SilentlyContinue
+
+    if ($installedVersion) {
+        Write-Output "Installed Zorus Version: $installedVersion"
     } else {
-        Write-Information "Installing Zorus Deployment Agent..."
+        Write-Output "Zorus agent not currently installed."
     }
 
-    # Run installer
-    Start-Process -FilePath $destination -ArgumentList $arguments -Wait
+    # --- Check downloaded installer version ---
+    $versionInfo       = [System.Diagnostics.FileVersionInfo]::GetVersionInfo($destination)
+    $downloadedVersion = $versionInfo.FileVersion
+    Write-Output "Downloaded Installer Version: $downloadedVersion"
 
-    Write-Information "Zorus Deployment Agent installation and configuration complete."
+    # --- Determine if installation required ---
+    $installRequired = $false
+    if (-not $installedVersion) {
+        Write-Output "No existing installation found, installation required."
+        $installRequired = $true
+    }
+    elseif ([version]$downloadedVersion -gt [version]$installedVersion) {
+        Write-Output "Update required: Installed version ($installedVersion) is older than downloaded version ($downloadedVersion)."
+        $installRequired = $true
+    }
+    else {
+        Write-Output "Zorus is up-to-date (Installed: $installedVersion, Downloaded: $downloadedVersion). Skipping installation."
+    }
+
+    # --- Perform installation if required ---
+    if ($installRequired) {
+        $arguments = @("/qn", "ARCHON_TOKEN=$Token", "HIDE_ADD_REMOVE=$HideFromAddRemove")
+        if (-not [string]::IsNullOrEmpty($Password)) {
+            $arguments += "UNINSTALL_PASSWORD=$Password"
+            Write-Output "Installing Zorus Deployment Agent with uninstall password..."
+        } else {
+            Write-Output "Installing Zorus Deployment Agent..."
+        }
+
+        Start-Process -FilePath $destination -ArgumentList $arguments -Wait -NoNewWindow
+        Write-Output "Zorus Deployment Agent installation and configuration complete."
+    }
 }
 
 End {
-    Write-Information "Removing temporary files..."
-    Remove-Item -recurse $destination
-    Write-Information "Installation complete."
+    Write-Output "Removing temporary files..."
+    try {
+        Remove-Item -Path $destination -Force -ErrorAction SilentlyContinue
+    } catch {
+        Write-Warning "Failed to remove installer at $destination"
+    }
+
     [System.Net.ServicePointManager]::SecurityProtocol = $originalProtocol
+    Write-Output "Installation process finished."
 }

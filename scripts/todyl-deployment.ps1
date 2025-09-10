@@ -1,25 +1,15 @@
 <#
 .SYNOPSIS
-    Installs the Todyl SGN Connect agent on Windows systems using the appropriate deployment key for servers, laptops, or desktops.
+    Installs or updates the Todyl SGN Connect agent on Windows systems using the appropriate deployment key.
 
 .DESCRIPTION
     - Downloads the latest SGN Connect installer.
     - Determines the machine type (server, laptop, desktop).
     - Retrieves the correct deployment key from Ninja organization properties.
-    - Runs the installer silently with the deployment key.
+    - Compares installed SGN Connect version with downloaded installer version.
+    - Runs the installer silently if installation is required.
     - Launches SGN Connect if installation succeeds.
     - Cleans up the installer file after installation.
-
-.NOTES
-    [script]
-    name = "Todyl Deployment Script"
-    description = "This script deploys Todyl Agent (SGN Connect) on the windows machines."
-    categories = ["Proval"]
-    language = "PowerShell"
-    operating_system = "Windows"
-    architecture = "All"
-    run_as = "System"
-
 #>
 
 Begin {
@@ -30,7 +20,7 @@ Begin {
     $ProgressPreference = 'SilentlyContinue'
 
     # Variables
-    $ProjectName     = 'Todyl'
+    $ProjectName      = 'Todyl'
     $WorkingDirectory = "C:\ProgramData\_automation\script\$ProjectName"
     $installerPath    = Join-Path $WorkingDirectory "SGNConnect_Latest.exe"
 
@@ -51,46 +41,78 @@ Begin {
 }
 
 Process {
-    # Identify machine type
-    $ComputerSystem = Get-CimInstance Win32_ComputerSystem
-    $MyOS           = (Get-CimInstance Win32_OperatingSystem).ProductType
+    # --- Check installed version ---
+    $installedVersion = Get-ChildItem -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall',
+                                           'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall' |
+        Get-ItemProperty |
+        Where-Object { $_.DisplayName -match 'sgn connect' } |
+        Select-Object -ExpandProperty DisplayVersion -ErrorAction SilentlyContinue
 
-    if ($MyOS -gt 1) {
-        Write-Output "PC is a server, setting key to serverDeploymentKey"
-        if ([string]::IsNullOrEmpty($serverDeploymentKey)) {
-            Write-Output "Todyl Server Key not supplied, exiting"
-            return
-        }
-        $todylKey = $serverDeploymentKey
+    if ($installedVersion) {
+        Write-Output "Installed SGN Connect Version: $installedVersion"
+    } else {
+        Write-Output "SGN Connect not currently installed."
     }
-    elseif ($ComputerSystem.PCSystemType -eq 2) {
-        Write-Output "PC is a laptop, setting key to laptopDeploymentKey: $laptopDeploymentKey"
-        if ([string]::IsNullOrEmpty($laptopDeploymentKey)) {
-            Write-Output "Todyl Laptop Key not supplied, exiting"
-            return
-        }
-        $todylKey = $laptopDeploymentKey
+
+    # --- Check downloaded installer version ---
+    $versionInfo    = [System.Diagnostics.FileVersionInfo]::GetVersionInfo($installerPath)
+    $downloadedVersion = $versionInfo.FileVersion
+    Write-Output "Downloaded Installer Version: $downloadedVersion"
+
+    $installRequired = $false
+    if (-not $installedVersion) {
+        Write-Output "No existing installation found, installation required."
+        $installRequired = $true
+    }
+    elseif ([version]$downloadedVersion -gt [version]$installedVersion) {
+        Write-Output "Update required: Installed version ($installedVersion) is older than downloaded version ($downloadedVersion)."
+        $installRequired = $true
     }
     else {
-        Write-Output "PC is a desktop, setting key to desktopDeploymentKey"
-        if ([string]::IsNullOrEmpty($desktopDeploymentKey)) {
-            Write-Output "Todyl Desktop Key not supplied, exiting"
-            return
-        }
-        Write-Output "Desktop Key: $desktopDeploymentKey"
-        $todylKey = $desktopDeploymentKey
+        Write-Output "SGN Connect is up-to-date (Installed: $installedVersion, Downloaded: $downloadedVersion). Skipping installation."
     }
 
-    # Run SGN Connect installer silently with deployment key
-    $proc = Start-Process -FilePath $installerPath -ArgumentList "/silent /deployKey $todylKey" -Wait -PassThru
-    Write-Output "Exit Code: $($proc.ExitCode)"
+    if ($installRequired) {
+        # Identify machine type
+        $ComputerSystem = Get-CimInstance Win32_ComputerSystem
+        $MyOS           = (Get-CimInstance Win32_OperatingSystem).ProductType
 
-    if ($proc.ExitCode -eq 0) {
-        $sgnPath = "C:\Program Files\SGN Connect\Current\sgnconnect.exe"
-        if (Test-Path $sgnPath) {
-            Start-Process $sgnPath
-        } else {
-            Write-Output "SGN Connect executable not found at expected path."
+        if ($MyOS -gt 1) {
+            Write-Output "PC is a server, setting key to serverDeploymentKey"
+            if ([string]::IsNullOrEmpty($serverDeploymentKey)) {
+                Write-Output "Todyl Server Key not supplied, exiting"
+                return
+            }
+            $todylKey = $serverDeploymentKey
+        }
+        elseif ($ComputerSystem.PCSystemType -eq 2) {
+            Write-Output "PC is a laptop, setting key to laptopDeploymentKey"
+            if ([string]::IsNullOrEmpty($laptopDeploymentKey)) {
+                Write-Output "Todyl Laptop Key not supplied, exiting"
+                return
+            }
+            $todylKey = $laptopDeploymentKey
+        }
+        else {
+            Write-Output "PC is a desktop, setting key to desktopDeploymentKey"
+            if ([string]::IsNullOrEmpty($desktopDeploymentKey)) {
+                Write-Output "Todyl Desktop Key not supplied, exiting"
+                return
+            }
+            $todylKey = $desktopDeploymentKey
+        }
+
+        # Run SGN Connect installer silently with deployment key
+        $proc = Start-Process -FilePath $installerPath -ArgumentList "/silent /deployKey $todylKey" -Wait -PassThru
+        Write-Output "Exit Code: $($proc.ExitCode)"
+
+        if ($proc.ExitCode -eq 0) {
+            $sgnPath = "C:\Program Files\SGN Connect\Current\sgnconnect.exe"
+            if (Test-Path $sgnPath) {
+                Start-Process $sgnPath
+            } else {
+                Write-Output "SGN Connect executable not found at expected path."
+            }
         }
     }
 }

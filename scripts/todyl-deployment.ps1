@@ -10,6 +10,16 @@
     - Runs the installer silently if installation is required.
     - Launches SGN Connect if installation succeeds.
     - Cleans up the installer file after installation.
+
+.NOTES
+    [script]
+    name = "Todyl Deployment"
+    description = "This script automates the deployment and update of the Todyl Agent (SGN Connect) on Windows machines by downloading the latest installer, running the installation silently, and validating that the agent has been successfully installed."
+    categories = ["Proval"]
+    language = "PowerShell"
+    operating_system = "Windows"
+    architecture = "All"
+    run_as = "System"
 #>
 
 Begin {

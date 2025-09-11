@@ -9,6 +9,16 @@
     - Extracts MSI ProductVersion before installing.
     - Compares versions, installs/updates only if newer (unless -ForceUpdate).
     - Logs all actions.
+
+.NOTES
+    [script]
+    name = "SentinelOne Deployment"
+    description = "This script handles both the deployment and update of the SentinelOne agent on Windows machines."
+    categories = ["Proval"]
+    language = "PowerShell"
+    operating_system = "Windows"
+    architecture = "All"
+    run_as = "System"
 #>
 
 

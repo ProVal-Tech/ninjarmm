@@ -1,19 +1,19 @@
 <#
 .SYNOPSIS
-    Installs the Zorus Agent (Archon Agent) on Windows systems.
+    Installs/Updates the Zorus Agent (Archon Agent) on Windows systems.
 
 .DESCRIPTION
     - Checks if the Zorus Agent is already installed.
     - Retrieves deployment token from Ninja organization properties.
     - Downloads the Zorus installer.
-    - Installs the agent with provided token and optional uninstall password.
+    - Installs/updates the agent with provided token and optional uninstall password.
     - Cleans up temporary files after installation.
     - Restores original .NET security protocol settings.
 
 .NOTES
     [script]
     name = "Zorus Deployment"
-    description = "This script automates the deployment of the Zorus agent (Archon Agent) across Windows machines by downloading the required installer, executing the installation silently, and verifying that the agent is successfully installed."
+    description = "This script automates the deployment and update of the Zorus agent (Archon Agent) across Windows machines by downloading the required installer, executing the installation silently, and verifying that the agent is successfully installed."
     categories = ["Proval"]
     language = "PowerShell"
     operating_system = "Windows"

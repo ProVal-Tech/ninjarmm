@@ -1,0 +1,49 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Drop-down"
+
+[Overview]
+Custom_field_type = "Dropdown"
+Label = "cPVAL Configure Taskbar Outlook Chrome Only"
+Name = "cpvalConfigureTaskbarOutlookChromeOnly"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = true
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Configure the taskbar to show only Microsoft Outlook and Google Chrome. All other pinned applications will be removed."
+Tooltip_text = "Use this setting to pin only Outlook and Chrome to the taskbar. Existing pinned apps will be cleared."
+Footer_text = "This configuration ensures a standardized taskbar layout by including only Outlook and Chrome. Select None to skip applying this setting to the current Client, Location, or Computer."
+
+[Advanced_Settings]
+
+[Advanced_Settings.Drop-down]
+Option_Value = """
+None
+Windows Workstation
+"""
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Managed devices"
+Custom_Field_Tab_Name = "Device Standards"
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Tabs > Manage tabs"
+Custom_Field_Tab_Name = "Device Standards"
+
+[Location_Custom_Fields]
+Path = "Administration > Organizations > Location Custom Fields > Edit Custom Tabs > Manage tabs"
+Custom_Field_Tab_Name = "Device Standards"

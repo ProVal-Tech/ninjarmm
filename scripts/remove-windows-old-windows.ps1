@@ -16,7 +16,7 @@
 if (Test-Path 'C:\Windows.old') { 
   try {
     Write-Host "Attempting to remove Windows.old directory"
-    Remove-Item C:\Windows.old -Recurse
+    Remove-Item C:\Windows.old -Recurse -Force
   }
   catch {
     Write-Host "An error occurred: Failed to remove Windows.old directory. Reason: $($_.Exception.Message)" -Level Error

@@ -1,0 +1,51 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Drop-down"
+
+[Overview]
+Custom_field_type = "Dropdown"
+Label = "cPVAL Turn off Windows Firewall"
+Name = "cpvalTurnoffWindowsFirewall"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = true
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Select the operating system(s) for which the Windows Firewall should be turned off. Choose None to exclude the Client, Location, or Computer from this action."
+Tooltip_text = "Use this dropdown to specify the OS where Windows Firewall should be disabled. Selecting None will leave the firewall settings unchanged for the selected entity."
+Footer_text = "This setting determines whether Windows Firewall is turned off based on the selected operating system. Choose None to skip applying this setting to the current Client, Location, or Computer."
+
+[Advanced_Settings]
+
+[Advanced_Settings.Drop-down]
+Option_Value = """
+None
+Windows Workstation and Windows Server
+Windows Workstation
+Windows Server
+"""
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Managed devices"
+Custom_Field_Tab_Name = "Device Standards"
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Tabs > Manage tabs"
+Custom_Field_Tab_Name = "Device Standards"
+
+[Location_Custom_Fields]
+Path = "Administration > Organizations > Location Custom Fields > Edit Custom Tabs > Manage tabs"
+Custom_Field_Tab_Name = "Device Standards"

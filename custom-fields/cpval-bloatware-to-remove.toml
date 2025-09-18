@@ -1,0 +1,41 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Multi-line"
+
+[Overview]
+Custom_field_type = "Text_multiline"
+Label = "cPVAL Bloatware to Remove"
+Name = "cpvalBloatwareToRemove"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = true
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Specify the list of applications (bloatware) to be removed from the system. Enter the names as a comma-separated list (e.g., Microsoft.Print3D, Microsoft.RemoteDesktop, Microsoft.SkypeApp, Microsoft.StorePurchaseApp)."
+Tooltip_text = "Enter the names of bloatware apps to remove, separated by commas. This list will be used when cPVAL Remove Bloatware is enabled."
+Footer_text = "This field defines which applications will be removed as bloatware. Ensure the names are accurate and comma-separated. This field works only when cPVAL Remove Bloatware is set to a valid option."
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Managed devices"
+Custom_Field_Tab_Name = "Device Standards"
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Tabs > Manage tabs"
+Custom_Field_Tab_Name = "Device Standards"
+
+[Location_Custom_Fields]
+Path = "Administration > Organizations > Location Custom Fields > Edit Custom Tabs > Manage tabs"
+Custom_Field_Tab_Name = "Device Standards"

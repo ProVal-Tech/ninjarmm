@@ -1,0 +1,51 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Drop-down"
+
+[Overview]
+Custom_field_type = "Dropdown"
+Label = "cPVAL Disable IPv6"
+Name = "cpvalDisableIpv6"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = true
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Select the operating system(s) for which IPv6 should be disabled. Choose None to exclude the Client, Location, or Computer from IPv6 disabling."
+Tooltip_text = "Use this dropdown to specify the target OS for disabling IPv6. Selecting None will leave IPv6 enabled for the selected entity."
+Footer_text = "This setting controls IPv6 disablement based on the selected operating system. Choose None to opt out for the current Client, Location, or Computer."
+
+[Advanced_Settings]
+
+[Advanced_Settings.Drop-down]
+Option_Value = """
+None
+Windows Workstation and Windows Server
+Windows Workstation
+Windows Server
+"""
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Managed devices"
+Custom_Field_Tab_Name = "Device Standards"
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Tabs > Manage tabs"
+Custom_Field_Tab_Name = "Device Standards"
+
+[Location_Custom_Fields]
+Path = "Administration > Organizations > Location Custom Fields > Edit Custom Tabs > Manage tabs"
+Custom_Field_Tab_Name = "Device Standards"

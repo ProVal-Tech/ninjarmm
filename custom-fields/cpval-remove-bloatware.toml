@@ -1,0 +1,51 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Drop-down"
+
+[Overview]
+Custom_field_type = "Dropdown"
+Label = "cPVAL Remove Bloatware"
+Name = "cpvalRemoveBloatware"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = true
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Enable this setting to remove unwanted applications (bloatware) from the system. The list of applications to be removed must be specified in the cPVAL Bloatware to Remove field as a comma-separated list."
+Tooltip_text = "Activates bloatware removal based on the list provided in the cPVAL Bloatware to Remove field. Ensure the list is comma-separated and accurate."
+Footer_text = "This configuration removes specified bloatware from the system. The actual apps to be removed must be listed in the cPVAL Bloatware to Remove field. Select None to skip this action for the current Client, Location, or Computer."
+
+[Advanced_Settings]
+
+[Advanced_Settings.Drop-down]
+Option_Value = """
+None
+Windows Workstation and Windows Server
+Windows Workstation
+Windows Server
+"""
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Managed devices"
+Custom_Field_Tab_Name = "Device Standards"
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Tabs > Manage tabs"
+Custom_Field_Tab_Name = "Device Standards"
+
+[Location_Custom_Fields]
+Path = "Administration > Organizations > Location Custom Fields > Edit Custom Tabs > Manage tabs"
+Custom_Field_Tab_Name = "Device Standards"

@@ -1,0 +1,70 @@
+[Compound_Condition]
+Path = "Administration > Policies > Agent Policies"
+Agent_Policy = "Windows Server"
+
+[Conditions]
+Trigger_when = "all conditions are true"
+
+[Conditions.Script_result_condition]
+
+[Conditions.Script_result_condition.Evaluation_script]
+Evaluation_script = "DFS Replication Health Check"
+
+[Conditions.Script_result_condition.Evaluation_script.Parameters]
+Run_As = "System"
+Preset_Parameter = ""
+
+[Conditions.Script_result_condition.Result_Code]
+Operator = "equal to"
+Result_Code = "1"
+
+[Conditions.Script_result_condition.Timeout]
+Hour = ""
+Minutes = "5"
+
+[Conditions.Script_result_condition.Output]
+Operator = "Contains"
+Text = "DFS Replication issues detected"
+
+Include_Script_Output_in_final_Alert = true
+
+[Conditions.Script_result_condition.Script_error_notification]
+Script_error_notification = false
+Operator = ""
+Result_Code = ""
+
+[Conditions.Windows_Role_feature]
+Feature_Display_Name = "FS-DFS-Replication"
+Trigger_When = "Any Role/Feature / Exists"
+
+[Settings]
+Name = "DFS Replication Health Status"
+
+[Settings.Auto_Reset]
+After = false
+Reset_Interval = ""
+When_no_longer_met = true
+
+Run_Every = "1 hour"
+
+[Settings.Trigger_uptime]
+Trigger_uptime = false
+Minimum_uptime_for_trigger = ""
+
+[Notifications]
+Severity = "Major"
+Priority = "High"
+Notify_Technicians = "Do not send notifications"
+Notify_on_reset = false
+Channels = ""
+
+[Notifications.ConnectWise]
+Create_a_ticket_enabled = true
+
+[Notifications.ConnectWise.Create_a_ticket]
+Ticket_Template = "P2 - Major"
+
+[Notifications.ConnectWise.Create_and_close_a_ticket]
+Ticket_Template = ""
+
+Ticketing_Rule = "Off"

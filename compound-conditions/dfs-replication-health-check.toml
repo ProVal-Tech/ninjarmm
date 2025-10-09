@@ -35,7 +35,7 @@ Result_Code = ""
 
 [Conditions.Windows_Role_feature]
 Feature_Display_Name = "FS-DFS-Replication"
-Trigger_When = "Any Role/Feature / Exists"
+Trigger_When = "Any Role/Feature", "Exists"
 
 [Settings]
 Name = "DFS Replication Health Status"

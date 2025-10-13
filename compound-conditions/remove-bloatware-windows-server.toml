@@ -35,7 +35,7 @@ Minutes = "5"
 
 [Conditions.Script_result_condition.Output]
 Operator = "Contains"
-Text = "Sleep"
+Text = "Found the following bloatware installed"
 
 Include_Script_Output_in_final_Alert = false
 

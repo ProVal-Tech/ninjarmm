@@ -1,0 +1,50 @@
+[Group 1]
+Path = "Administration > Device > Groups"
+
+[Filters]
+
+[Filters.More_filters.Device.Custom_Fields]
+
+[Filters.More_filters.Device.Custom_Fields.Has_all_conditions]
+Custom_field = "cPVAL ESU Status"
+Condition = "Contains"
+Text = "ESU activated"
+
+[Save_device_group]
+Name = "Win10 ESU Activated"
+Description = "This contains the list of Windows 10 devices where the ESU is activated"
+Permission_type = "Self (Private) ━━ default"
+
+[Group 2]
+Path = "Administration > Device > Groups"
+
+[Filters]
+
+[Filters.More_filters.Device.Custom_Fields]
+
+[Filters.More_filters.Device.Custom_Fields.Has_all_conditions]
+Custom_field = "cPVAL ESU Status"
+Condition = "Contains"
+Text = "ESU Not activated"
+
+[Save_device_group]
+Name = "Win10 ESU Not Activated"
+Description = "This contains the list of machines where the script detects that the ESU license was not activated"
+Permission_type = "Self (Private) ━━ default"
+
+[Group 3]
+Path = "Administration > Device > Groups"
+
+[Filters]
+
+[Filters.More_filters.Device.Custom_Fields]
+
+[Filters.More_filters.Device.Custom_Fields.Has_all_conditions]
+Custom_field = "cPVAL ESU Status"
+Condition = "Contains"
+Text = "PowerShell failure"
+
+[Save_device_group]
+Name = "Win10 ESU Detection Failed"
+Description = "This contains the list of Windows 10 agents where the ESU license activation detection failed via script"
+Permission_type = "Self (Private) ━━ default"

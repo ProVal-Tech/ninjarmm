@@ -66,7 +66,7 @@ Path = "Administration > Organization custom fields"
 Type = "Text"
 
 [Overview]
-Custom_field_type = "Text"
+Custom_field_type = "Drop-Down"
 Label = "cPVAL ESU Year"
 Name = "cpvalEsuYear"
 Custom_field_is_required = false
@@ -83,6 +83,6 @@ API = "Read_Write"
 Technician_access = "Editable"
 
 [Details]
-Description = "Provide the license key year validation in numeric form, like 1, 2, or 3."
+Description = "Select the license key year validation from 1, 2, or 3 options"
 Tooltip_text = ""
 Footer_text = ""

@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Apply and validate Windows 10 Extended Security Updates (ESU) licensing on one or more target machines.
+The Windows 10 Extended Security Updates program provides critical security patches for up to three years beyond the official end of support date.
 
     [script]
     name = "Windows 10 Extended Security Update"
@@ -20,7 +20,7 @@ Apply and validate Windows 10 Extended Security Updates (ESU) licensing on one o
 
     [[script.variables]]
     name = "ESUYear"
-    description = "Provide the license key year validation in numeric form, like 1, 2, or 3."
+    description = "Select the license key year validation like 1, 2, or 3."
     type = "Drop-down"
     mandatory = false
     option_values = ["1", "2", "3"]

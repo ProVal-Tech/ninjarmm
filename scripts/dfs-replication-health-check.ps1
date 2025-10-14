@@ -33,8 +33,8 @@ if ($EventErrors -or $DfsrState) {
         Write-Output 'Recent DFSR Errors/Warnings:'
         $EventErrors | Select-Object TimeCreated, Id, LevelDisplayName, Message | Format-Table -AutoSize
     }
-    #exit 1   # Trigger alert
+    exit 1   # Trigger alert
 } else {
     Write-Output "No DFS replication issues in the last $ThresholdHours hours"
-    #exit 0   # Healthy
+    exit 0   # Healthy
 }

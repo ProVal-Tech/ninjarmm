@@ -1,0 +1,28 @@
+[Task]
+Path = "Administration > Tasks"
+
+[Details]
+
+[Details.General]
+Enabled = true
+Name = "Windows 10 22H2 ESU Audit"
+Description = "Executes 'ESU License Activation Detection' script once per day against Windows 10 22H2 machines."
+Allow_Groups = true
+
+[Details.Schedule]
+Repeats = "Daily"
+
+[Details.Schedule.Repeats.Daily]
+Recur_every = "1 day(s)"
+Start_At = "10/23/2025 11:30 AM"
+Ends = "Never"
+
+[Details.Automation]
+Name = "ESU License Activation Detection"
+
+[Details.Automation.Parameters]
+Run_As = "System"
+Preset_Parameter = ""
+
+[Targets]
+Group = "cPVAL Windows 10 22H2"

@@ -17,7 +17,7 @@ Organization = false
 [Permissions]
 Automation = "Read_Write"
 API = "Read_Write"
-Technician_access = "Editable"
+Technician_access = "Read Only"
 
 [Details]
 Description = "This custom field stores the endpoint's ESU status."

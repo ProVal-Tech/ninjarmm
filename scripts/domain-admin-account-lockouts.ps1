@@ -3,19 +3,25 @@
 Checks for recent Domain Admin account lockouts in the last 15 minutes.
 
 .DESCRIPTION
-This script scans the Security event log for account lockout events (Event ID 4740) that have occurred in the last 15 minutes. 
-It specifically identifies if any accounts that belong to the 'Domain Admins' group have been locked out. 
-For any locked-out Domain Admin accounts, the script retrieves and outputs detailed information including the username, 
-last login time, lockout time, endpoint, and domain. If a Domain Admin account lockout is detected, the script exits with code 1, 
-allowing integration with monitoring or alerting systems.
+This script monitors the Security log for recent account lockouts, checks if any Domain Admin accounts are affected, outputs detailed info about the locked accounts, and fails immediately if any Domain Admin is locked out.
+
+.Usage
+  - Exit code 1 indicates that one or more Domain Admin accounts have been locked out
+  - Outputs detailed information about the locked-out accounts for further investigation
 
 .NOTES
-Requirements: 
-  - Active Directory PowerShell module
-  - Run with appropriate permissions to query Security logs and Active Directory
-  - Should be executed on a domain-joined system
+    [script]
+    name = "Domain Admin Account Lockouts"
+    description = "This script monitors the Security log for recent account lockouts, checks if any Domain Admin accounts are affected, outputs detailed info about the locked accounts, and fails immediately if any Domain Admin is locked out."
+    categories = ["ProVal"]
+    language = "PowerShell"
+    operating_system = "Windows"
+    architecture = "All"
+    run_as = "System"
+#>
 
-Usage:
+
+.Usage
   - Exit code 1 indicates that one or more Domain Admin accounts have been locked out
   - Outputs detailed information about the locked-out accounts for further investigation
 #>

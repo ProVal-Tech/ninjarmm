@@ -16,7 +16,7 @@ Impact = "High"
 Create_and_close_status = ""
 Ticket_Title_Contents = { "Custom text", "Device Name" }
 Custom_Text = "Domain Admin Account Lockouts"
-When_Condition_is_reset = "Change to >> Closed"
+When_Condition_is_reset = "Change to >> Complete"
 When_matches = ""
 When_Condition_retriggers = "Append to existent ticket (if not closed)"
 

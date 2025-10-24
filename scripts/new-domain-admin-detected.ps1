@@ -16,14 +16,14 @@ about any new Domain Admin accounts found. Exit codes are provided for integrati
   - Exit 2: Errors during directory creation, download, or script execution
 
 .NOTES
-Requirements     : 
-    - PowerShell 3.0 or higher
-    - .NET Framework supporting TLS 1.2 or TLS 1.3
-    - Internet connectivity to download the script
-    - Permissions to execute scripts and query Domain Admin accounts
-Usage            :
-    - Handles exclusions automatically based on a predefined custom field
-    - Outputs details of new Domain Admins for auditing or alerting purposes
+    [script]
+    name = "Domain Admin Account Lockouts"
+    description = "This script monitors the Security log for recent account lockouts, checks if any Domain Admin accounts are affected, outputs detailed info about the locked accounts, and fails immediately if any Domain Admin is locked out."
+    categories = ["ProVal"]
+    language = "PowerShell"
+    operating_system = "Windows"
+    architecture = "All"
+    run_as = "System"
 #>
 
 #region Global Variables

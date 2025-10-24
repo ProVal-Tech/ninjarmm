@@ -37,7 +37,7 @@ Script_error_notification = false
 
 
 [General]
-Name = "Domain Admin Account Lockouts"
+Name = "New Domain Admin Detected"
 Severity = "Critical"
 Priority = "High"
 

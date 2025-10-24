@@ -210,7 +210,7 @@ begin {
     #endRegion
 
     #region Verification
-    Write-Information'Verifying activation status...'
+    Write-Information 'Verifying activation status...'
     try {
         $argumentList = @(
             '/nologo',

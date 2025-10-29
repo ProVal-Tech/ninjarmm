@@ -1,0 +1,22 @@
+[ConnectWise_Manage_Ticket_Template]
+Path = "Administration > Apps > Installed > ConnectWise Manage"
+
+[Ticket_Template]
+Name = "P2 - Major"
+Board = "Help  Desk"
+Status = "New"
+Priority = "Priority 2 - High"
+Type = "MUST CHANGE"
+Sub_Type = ""
+Item = ""
+Source = "PORTAL"
+Team = "Service Team"
+Severity = "High"
+Impact = "High"
+Create_and_close_status = ">Closed"
+Ticket_Title_Contents = "Organization", "Device Name", "Body"
+Custom_Text = ""
+When_Condition_is_reset = "Change to > Closed"
+When_Condition_retriggers = "Append to existent ticket (if not closed)"
+
+ # The details above may differ depending on environment. Please verify the required information with consultant or partner before completing these fields.

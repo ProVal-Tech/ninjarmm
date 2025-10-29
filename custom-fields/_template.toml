@@ -114,20 +114,29 @@ Path = "Administration > Devices > Roles"
 [Device_Custom_Field.Role]
 Role_Name = ""
 Custom_Field_Tab_Name = ""
+Custom_Field_Tab_Description = ""
 
 [Device_Custom_Fields.Role]
 Role_Name = ""
 Custom_Field_Tab_Name = ""
+Custom_Field_Tab_Description = ""
 
 [Device_Custom_Fields.Role]
 Role_Name = ""
 Custom_Field_Tab_Name = ""
+Custom_Field_Tab_Description = ""
 
 [Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization custom fields > Edit custom tabs > Manage tabs"
 Custom_Field_Tab_Name = ""
+Custom_Field_Tab_Description = ""
 
 [Location_Custom_Fields]
+Path = "Administration > Organizations > Location custom fields > Edit custom tabs > Manage tabs"
 Custom_Field_Tab_Name = ""
+Custom_Field_Tab_Description = ""
 
 [End_User_Custom_Fields]
+Path = "Administration > Accounts > End user custom fields > Edit custom tabs > Manage tabs"
 Custom_Field_Tab_Name = ""
+Custom_Field_Tab_Description = ""

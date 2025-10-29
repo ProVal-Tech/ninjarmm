@@ -1,0 +1,49 @@
+[Custom_Field]
+Path = "Administration > Devices > Device Custom Fields"
+Type = "Drop-down"
+
+[Overview]
+Custom_field_type = "Drop-down"
+Label = "cPVAL ESU Year"
+Name = "cpvalEsuYear"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = true
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Select the license key year validation from options 1, 2, or 3."
+Tooltip_text = "Select the license key year validation from options 1, 2, or 3."
+Footer_text = "Select the license key year validation from options 1, 2, or 3."
+
+[Advanced_Settings]
+
+[Advanced_Settings.Drop-down]
+Option_Value = "1, 2, 3"
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Windows Desktops and Laptops"
+Custom_Field_Tab_Name = "ESU Device"
+Custom_Field_Tab_Description = "Custom Fields for Window 10 22H2 ESU License management."
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization custom fields > Edit custom tabs > Manage tabs"
+Custom_Field_Tab_Name = "ESU"
+Custom_Field_Tab_Description = "Custom Fields for Window 10 22H2 ESU License management."
+
+[Location_Custom_Fields]
+Path = "Administration > Organizations > Location custom fields > Edit custom tabs > Manage tabs"
+Custom_Field_Tab_Name = "ESU"
+Custom_Field_Tab_Description = "Custom Fields for Window 10 22H2 ESU License management."

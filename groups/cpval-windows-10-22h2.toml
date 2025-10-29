@@ -1,0 +1,18 @@
+[Group]
+Path = "Administration > Device > Groups"
+
+[Filters]
+
+[Filters.More_filters]
+
+[Filters.More_filters.Inventory]
+
+[Filters.More_filters.Inventory.OS_Version_build]
+Filter = "19045"
+Operator = "Contains"
+Result = "Any"
+
+[Save_device_group]
+Name = "cPVAL Windows 10 22H2"
+Description = "Group of Windows 10 22H2 machines"
+Permission_type = "Self (Private) ━━ default"

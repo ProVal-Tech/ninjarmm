@@ -1,0 +1,20 @@
+[Group]
+Path = "Administration > Device > Groups"
+
+[Filters]
+
+[Filters.More_filters]
+
+[Filters.More_filters.Device]
+
+[Filters.More_filters.Device.Custom_Fields]
+
+[Filters.More_filters.Device.Custom_Fields.Has_all_conditions]
+Custom_field = "cPVAL ESU Status"
+Condition = "Contains"
+Text = "ESU Not Activated"
+
+[Save_device_group]
+Name = "cPVAL Win10 ESU Not Activated"
+Description = "This contains the list of machines where the script detects that the ESU license was not activated."
+Permission_type = "Self (Private) ━━ default"

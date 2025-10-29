@@ -1,0 +1,56 @@
+[Condition]
+Path = "Administration > Policies > Agent Policies"
+Agent_Policy = "Windows Server - Active Directory"
+
+[Condition]
+Condition = """
+Script Result Condition
+"""
+
+[Condition.Script_Result_Condition]
+
+[Condition.Script_Result_Condition.Evaluation_script]
+Evaluation_script = "Domain Admin Account Lockouts"
+
+[Condition.Script_Result_Condition.Evaluation_script.Parameters]
+Run_As = "System"
+Preset_Parameter = ""
+
+[Condition.Script_Result_Condition.Run_Every]
+Hour = ""
+Minutes = "15"
+
+[Condition.Script_Result_Condition.Timeout]
+Hour = ""
+Minutes = "5"
+
+[Condition.Script_Result_Condition.Result_Code]
+Operator = "equal to"
+Result_Code = "1"
+
+[Condition.Script_Result_Condition.With_Output]
+Text = "Username"
+Operator = "Contains"
+
+[Condition.Script_Result_Condition.Script_error_notification]
+Script_error_notification = false
+
+
+[General]
+Name = "Domain Admin Account Lockouts"
+Severity = "Critical"
+Priority = "High"
+
+[General.Auto-reset]
+After = false
+Reset_Interval = ""
+When_no_longer_met = true
+
+Channel = ""
+Notify_Technicians = "Do not send notifications"
+ConnectWise = "Create a ticket"
+
+[Notifications.ConnectWise.Create_a_ticket]
+Ticket_Template = "Domain Admin Account Lockouts" # use an appropriate ticket template
+
+Ticketing_Rule = "Off"

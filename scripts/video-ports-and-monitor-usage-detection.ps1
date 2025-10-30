@@ -1,6 +1,6 @@
 <# 
 .SYNOPSIS
-Detects GPU/video controllers, connected monitors and the video ports in use, and stores a formatted report in the Ninja RMM custom property "cPVAL - videoPortsMonitors".
+Detects GPU/video controllers, connected monitors and the video ports in use, and stores a formatted report in the Ninja RMM Custom Field "cPVAL Video Ports Monitors".
 
 .DESCRIPTION
 Queries Win32_VideoController, WmiMonitorConnectionParams and WmiMonitorID via CIM to build a readable report of:
@@ -8,22 +8,22 @@ Queries Win32_VideoController, WmiMonitorConnectionParams and WmiMonitorID via C
  - Connected monitors (manufacturer, model, port used, instance name)
  - Assumed available ports per GPU
 
-The generated report is stored in the Ninja RMM custom property 'videoPortsMonitor' using Ninja-Property-Set and written to output for logging.
+The generated report is stored in the NinjaRMM Custom Field "cpvalvideoPortsMonitor" using Ninja-Property-Set and written to output for logging.
 
 .PARAMETERS
 None. Run this script locally on the target machine (requires WMI/CIM access).
 
 .EXAMPLE
 .\Get-VideoPortsAndMonitorUsageDetection.ps1
-# Runs the script and updates the Ninja RMM custom property "videoPortsMonitor".
+# Runs the script and updates the NinjaRMM Custom Field "cpvalvideoPortsMonitor".
 
 .OUTPUTS
-Writes a multi-line string report to the Ninja RMM custom property and to standard output.
+Writes a multi-line string report to the NinjaRMM Custom Field and to standard output.
 
 .NOTES
     [script]
     name = "Video Ports and Monitor Usage Detection"
-    description = "A brief description of the script's purpose"
+    description = "This script gathers GPU and monitor details, detects connected displays and port types (HDMI, VGA, etc.), lists available ports, and stores all info in the custom field 'cPVAL Video Ports Monitors'."
     categories = ["Proval", "Hardware"]
     language = "PowerShell"
     operating_system = "Windows"

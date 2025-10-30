@@ -22,14 +22,14 @@ API = "Read_Write"
 Technician_access = "Editable"
 
 [Details]
-Description = "Detect all available video output ports on the system (HDMI, DisplayPort, VGA, DVI, etc.). Detect which ports are actively used by connected monitors."
-Tooltip_text = ""
-Footer_text = ""
+Description = "Displays data about the system's video controllers, shows which monitors are currently connected, type of video ports they are using and commonly available ports based on GPU capabilities."
+Tooltip_text = "Video Ports"
+Footer_text = "Video Ports"
 
 [Device_Custom_Fields]
 
 Path = "Administration > Devices > Roles"
 
 [Device_Custom_Field.Role]
-Role_Name = "windows desktop and laptop"
-Custom_Field_Tab_Name = "Default fields"
+Role_Name = "Windows Desktops and Laptops"
+Custom_Field_Tab_Name = "Default Fields"

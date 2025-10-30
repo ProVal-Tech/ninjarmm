@@ -1,0 +1,26 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+
+Type = "Text"
+
+[Overview]
+Custom_field_type = "Text"
+Label = "cPval Excluded Domain Admins"
+Name = "cpvalExcludedDomainAdmins"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = false
+End_User = false
+Location = false
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Add the usernames to exclude from generating the new domain admin detected tickets. Multiple usernames can be added by separating them with a comma like AutomateTestAccount,FlyingBatman,FallingBatman"
+Tooltip_text = ""
+Footer_text = ""

@@ -1,0 +1,35 @@
+[Custom_Field]
+Path = "Administration > Devices > Device Custom Fields"
+
+Type = "Multi-line"
+
+
+[Overview]
+Custom_field_type = "Multi-line"
+Label = "cPVAL Video Ports Monitors"
+Name = "cpvalVideoPortsMonitors"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = false
+Organization = false
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Displays data about the system's video controllers, shows which monitors are currently connected, type of video ports they are using and commonly available ports based on GPU capabilities."
+Tooltip_text = "Video Ports"
+Footer_text = "Video Ports"
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Windows Desktops and Laptops"
+Custom_Field_Tab_Name = "Default Fields"

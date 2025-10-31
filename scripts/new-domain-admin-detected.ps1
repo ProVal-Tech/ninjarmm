@@ -39,6 +39,24 @@ $scriptPath = '{0}\{1}.ps1' -f $workingDirectory, $projectName
 $baseUrl = 'https://contentrepo.net/repo'
 $scriptUrl = '{0}/script/{1}.ps1' -f $baseUrl, $projectName
 $excludedAdminCustomFieldName = 'cpvalExcludedDomainAdmins'
+$domainAdminMonitoringCustomField = 'cpvalNewDomainAdminMonitoring'
+#endRegion
+
+#region NinjaRMM custom fields
+$domainAdminMonitoringId = Ninja-Property-Get -Name $domainAdminMonitoringCustomField
+if ([string]::IsNullOrEmpty($domainAdminMonitoringId)) {
+    Write-Information 'Domain Admin monitoring is not enabled on this device. Exiting script.'
+    exit 0
+}
+$domainAdminMonitoringOptions = Ninja-Property-Options $domainAdminMonitoringId
+if ($domainAdminMonitoringOptions) {
+    $domainAdminMonitoringValue = $($($domainAdminMonitoringOptions -match [Regex]::Escape($domainAdminMonitoringId)).split('='))[1]
+}
+if ($domainAdminMonitoringValue -ne 'Enabled') {
+    Write-Information 'Domain Admin monitoring is not enabled on this device. Exiting script.'
+    exit 0
+}
+
 $excludedAdmin = Ninja-Property-Get -Name $excludedAdminCustomFieldName
 $excludedAdminList = @()
 if ($excludedAdmin) {

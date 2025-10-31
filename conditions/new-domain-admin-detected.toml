@@ -35,7 +35,6 @@ Operator = "Contains"
 [Condition.Script_Result_Condition.Script_error_notification]
 Script_error_notification = false
 
-
 [General]
 Name = "New Domain Admin Detected"
 Severity = "Critical"

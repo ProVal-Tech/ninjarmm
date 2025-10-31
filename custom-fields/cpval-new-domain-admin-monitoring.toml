@@ -1,11 +1,11 @@
 [Custom_Field]
 Path = "Administration > Organizations > Organization Custom Fields"
-Type = "Text"
+Type = "Drop-down"
 
 [Overview]
 Custom_field_type = "Text"
-Label = "cPVAL Excluded Domain Admins"
-Name = "cpvalExcludedDomainAdmins"
+Label = "cPVAL New Domain Admin Monitoring"
+Name = "cpvalNewDomainAdminMonitoring"
 Custom_field_is_required = false
 
 [Inheritance]
@@ -20,9 +20,14 @@ API = "Read_Write"
 Technician_access = "Editable"
 
 [Details]
-Description = "Add the usernames to exclude from generating the new domain admin detected tickets. Multiple usernames can be added by separating them with a comma like AutomateTestAccount,FlyingBatman,FallingBatman"
-Tooltip_text = "Add the usernames to exclude from generating the new domain admin detected tickets. Multiple usernames can be added by separating them with a comma like AutomateTestAccount,FlyingBatman,FallingBatman"
+Description = "Select Enable to enable New Domain Admin monitoring. Disable can be selected at Computer or Location level for excluding them."
+Tooltip_text = "Select Enable to enable New Domain Admin monitoring. Disable can be selected at Computer or Location level for excluding them."
 Footer_text = ""
+
+[Advanced_Settings]
+
+[Advanced_Settings.Drop-down]
+Option_Value = "Enabled, Disabled"
 
 [Device_Custom_Fields]
 

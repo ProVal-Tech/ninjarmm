@@ -52,7 +52,7 @@ $domainAdminMonitoringOptions = Ninja-Property-Options $domainAdminMonitoringId
 if ($domainAdminMonitoringOptions) {
     $domainAdminMonitoringValue = $($($domainAdminMonitoringOptions -match [Regex]::Escape($domainAdminMonitoringId)).split('='))[1]
 }
-if ($domainAdminMonitoringValue -ne 'Enabled') {
+if ($domainAdminMonitoringValue -ne 'Enable') {
     Write-Information 'Domain Admin monitoring is not enabled on this device. Exiting script.'
     exit 0
 }

@@ -27,7 +27,7 @@ Footer_text = ""
 [Advanced_Settings]
 
 [Advanced_Settings.Drop-down]
-Option_Value = "Enabled, Disabled"
+Option_Value = "Enable, Disable"
 
 [Device_Custom_Fields]
 

@@ -5,7 +5,7 @@
 .NOTES
     [script]
     name = "SMB1 Access Audit and Detection"
-    description = "Enables SMB1 access auditing if disabled and scans event logs for recent SMB1 access attempts (Event IDs 1001, 3000) within the last hour. Returns exit codes for detection or script failure."
+    description = "Enables SMB1 access auditing if disabled and scans event logs for recent SMB1 access attempts (Event IDs 1001, 3000) within the last hour."
     categories = ["ProVal"]
     language = "PowerShell"
     operating_system = "Windows"
@@ -40,16 +40,8 @@ if (!( (Get-SmbServerConfiguration).AuditSmb1Access )) {
             $filter.StartTime = (Get-Date).AddHours(-$Hours)
         }
 
-        try {
-            Get-WinEvent -FilterHashtable $filter -ErrorAction Stop
-        } catch {
-            if ($Error[0].Exception.Message -match 'No events were found') {
-                return 'No events were found that match the specified selection criteria'
-            } else {
-                Write-Output "Complete Failure: $($Error[0].Exception.Message)"
-                exit 2
-            }
-        }
+        $smbLogs = Get-WinEvent -FilterHashtable $filter -ErrorAction SilentlyContinue
+        return $smbLogs
     }
 
     $detectedLogs = Get-SMB1AccessLog -Level 4 -EventID 1001, 3000 -Hours 1

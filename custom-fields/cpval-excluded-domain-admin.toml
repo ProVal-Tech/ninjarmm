@@ -4,8 +4,8 @@ Type = "Text"
 
 [Overview]
 Custom_field_type = "Text"
-Label = "cPVAL Excluded Domain Admins"
-Name = "cpvalExcludedDomainAdmins"
+Label = "cPVAL Excluded Domain Admin"
+Name = "cpvalExcludedDomainAdmin"
 Custom_field_is_required = false
 
 [Inheritance]

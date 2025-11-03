@@ -38,8 +38,16 @@ $workingDirectory = '{0}\_Automation\Script\{1}' -f $env:ProgramData, $projectNa
 $scriptPath = '{0}\{1}.ps1' -f $workingDirectory, $projectName
 $baseUrl = 'https://contentrepo.net/repo'
 $scriptUrl = '{0}/script/{1}.ps1' -f $baseUrl, $projectName
-$excludedAdminCustomFieldName = 'cpvalExcludedDomainAdmins'
+$excludedAdminCustomFieldName = 'cpvalExcludedDomainAdmin'
 $domainAdminMonitoringCustomField = 'cpvalNewDomainAdminMonitoring'
+#endRegion
+
+#region Check is domain controller
+$isDomainController = (Get-CimInstance -ClassName Win32_OperatingSystem).ProductType -ne 2
+if ($isDomainController) {
+    Write-Information 'This script can only be run on Windows Domain Controllers.'
+    exit 0
+}
 #endRegion
 
 #region NinjaRMM custom fields
@@ -48,7 +56,7 @@ if ([string]::IsNullOrEmpty($domainAdminMonitoringId)) {
     Write-Information 'Domain Admin monitoring is not enabled on this device. Exiting script.'
     exit 0
 }
-$domainAdminMonitoringOptions = Ninja-Property-Options $domainAdminMonitoringId
+$domainAdminMonitoringOptions = Ninja-Property-Options $domainAdminMonitoringCustomField
 if ($domainAdminMonitoringOptions) {
     $domainAdminMonitoringValue = $($($domainAdminMonitoringOptions -match [Regex]::Escape($domainAdminMonitoringId)).split('='))[1]
 }

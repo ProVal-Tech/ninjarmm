@@ -20,8 +20,8 @@ API = "Read_Write"
 Technician_access = "Editable"
 
 [Details]
-Description = "Select Enable to enable New Domain Admin monitoring. Disable can be selected at Computer or Location level for excluding them."
-Tooltip_text = "Select Enable to enable New Domain Admin monitoring. Disable can be selected at Computer or Location level for excluding them."
+Description = "Select 'Enable' to enable New Domain Admin monitoring. 'Disable' can be selected at Computer or Location level for excluding them."
+Tooltip_text = "Select 'Enable' to enable New Domain Admin monitoring. 'Disable' can be selected at Computer or Location level for excluding them."
 Footer_text = ""
 
 [Advanced_Settings]

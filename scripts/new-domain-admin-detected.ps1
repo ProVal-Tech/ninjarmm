@@ -17,8 +17,8 @@ about any new Domain Admin accounts found. Exit codes are provided for integrati
 
 .NOTES
     [script]
-    name = "Domain Admin Account Lockouts"
-    description = "This script monitors the Security log for recent account lockouts, checks if any Domain Admin accounts are affected, outputs detailed info about the locked accounts, and fails immediately if any Domain Admin is locked out."
+    name = "New Domain Admin Detected"
+    description = "This script detects the user or group of users if its promoted to domain administrator on a Windows domain controller. It excludes the default administrators and any user mentioned in the cpvalExcludedDomainAdmins."
     categories = ["ProVal"]
     language = "PowerShell"
     operating_system = "Windows"

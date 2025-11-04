@@ -1,0 +1,55 @@
+[Condition]
+Path = "Administration > Policies > Agent Policies"
+Agent_Policy = "Windows Server - Active Directory"
+
+[Condition]
+Condition = """
+Script Result Condition
+"""
+
+[Condition.Script_Result_Condition]
+
+[Condition.Script_Result_Condition.Evaluation_script]
+Evaluation_script = "New Domain Admin Detected"
+
+[Condition.Script_Result_Condition.Evaluation_script.Parameters]
+Run_As = "System"
+Preset_Parameter = ""
+
+[Condition.Script_Result_Condition.Run_Every]
+Hour = "4"
+Minutes = "0"
+
+[Condition.Script_Result_Condition.Timeout]
+Hour = ""
+Minutes = "30"
+
+[Condition.Script_Result_Condition.Result_Code]
+Operator = "equal to"
+Result_Code = "1"
+
+[Condition.Script_Result_Condition.With_Output]
+Text = "New Domain Admin Detected"
+Operator = "Contains"
+
+[Condition.Script_Result_Condition.Script_error_notification]
+Script_error_notification = false
+
+[General]
+Name = "New Domain Admin Detected"
+Severity = "Critical"
+Priority = "High"
+
+[General.Auto-reset]
+After = false
+Reset_Interval = ""
+When_no_longer_met = true
+
+Channel = ""
+Notify_Technicians = "Do not send notifications"
+ConnectWise = "Create a ticket"
+
+[Notifications.ConnectWise.Create_a_ticket]
+Ticket_Template = "New Domain Admin Detected" # use an appropriate ticket template
+
+Ticketing_Rule = "Off"

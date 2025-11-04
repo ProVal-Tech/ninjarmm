@@ -1,0 +1,49 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Drop-down"
+
+[Overview]
+Custom_field_type = "Text"
+Label = "cPVAL New Domain Admin Monitoring"
+Name = "cpvalNewDomainAdminMonitoring"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = true
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Select 'Enable' to enable New Domain Admin monitoring. 'Disable' can be selected at Computer or Location level for excluding them."
+Tooltip_text = "Select 'Enable' to enable New Domain Admin monitoring. 'Disable' can be selected at Computer or Location level for excluding them."
+Footer_text = ""
+
+[Advanced_Settings]
+
+[Advanced_Settings.Drop-down]
+Option_Value = "Enable, Disable"
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Windows Server - Active Directory"
+Custom_Field_Tab_Name = "New Domain Admin Monitoring Device"
+Custom_Field_Description = "Custom Fields for new domain admin monitoring."
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization Custom Fields > Edit Custom Tabs > Manage tabs"
+Custom_Field_Tab_Name = "New Domain Admin Monitoring"
+Custom_Field_Description = "Custom Fields for new domain admin monitoring."
+
+[Location_Custom_Fields]
+Path = "Administration > Organizations > Location Custom Fields > Edit Custom Tabs > Manage tabs"
+Custom_Field_Tab_Name = "New Domain Admin Monitoring"
+Custom_Field_Description = "Custom Fields for new domain admin monitoring."

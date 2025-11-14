@@ -24,7 +24,7 @@
     - Custom field names can be customized by editing the script or setting the runtime variable.
 
 .EXAMPLE
-    S1 Key Custom Field Name = 'SentinelOne Key'
+    S1 Key Custom Field Name = 'sentineloneKey'
 
     Runs the script and compares the SentinelOne Management Server URL on the endpoint with the url fetched from the client-level key stored in 'SentinelOne Key' custom field.
 
@@ -53,7 +53,7 @@
     description = "Name of the client-level custom field used to store the SentinelOne installation key. Default is 'cPVAL SentinelOne Key'"
     type = "String/Text"
     mandatory = false
-    default_value = "cPVAL SentinelOne Key"
+    default_value = ""
 #>
 begin {
     #region Variables

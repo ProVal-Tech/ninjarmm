@@ -22,8 +22,8 @@
 #>
 
 Begin {
-    $Token     = Ninja-Property-Get -Type Organization -Name 'cpvalZorusTokenKey'
-    $Password  = Ninja-Property-Get -Type Organization -Name 'cpvalZorusUninstallationPassword'
+    $Token     = Ninja-Property-Get -Name 'cpvalZorusTokenKey'
+    $Password  = Ninja-Property-Get -Name 'cpvalZorusUninstallationPassword'
     $HideFromAddRemove = 1   # Default to hide from Add/Remove programs (0 = show, 1 = hide)
 
     $originalProtocol = [System.Net.ServicePointManager]::SecurityProtocol

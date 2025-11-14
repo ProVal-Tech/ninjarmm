@@ -86,7 +86,7 @@ begin {
     #endRegion
 
     #region Get SentinelOne Configuration from NinjaOne
-    $clientLevelKey = Ninja-Property-Get -Type Organization -Name $defaultCFName
+    $clientLevelKey = Ninja-Property-Get -Name $defaultCFName
     if ([string]::IsNullOrEmpty($clientLevelKey)) {
         Write-Information ('Client Level EDF ''{0}'' is not set.' -f $defaultCFName) -InformationAction Continue
         $exitCode = 0
@@ -105,7 +105,7 @@ begin {
         return
     }
     $mgmtServer = $mgmtServer -replace '"', ''
-    Ninja-Property-Set -Type EndPoint -Name $compLevelCFName -Value $mgmtServer
+    Ninja-Property-Set -Name $compLevelCFName -Value $mgmtServer
     #endRegion
 
     #region Compare SentinelOne Mgmt Url
@@ -124,6 +124,6 @@ Computer Level Management Server Url: $mgmtServer
     }
     #endRegion
 } end {
-    Ninja-Property-Set -Type EndPoint -Name $compLevelMgmtDescCFName -Value $exitCode
+    Ninja-Property-Set -Name $compLevelMgmtDescCFName -Value $exitCode
     exit $exitCode
 }

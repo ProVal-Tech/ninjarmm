@@ -43,9 +43,9 @@ Begin {
     Invoke-WebRequest "https://download.todyl.com/sgn_connect/SGNConnect_Latest.exe" -OutFile $installerPath
 
     # Retrieve deployment keys from Ninja properties
-    $laptopDeploymentKey  = Ninja-Property-Get -Type Organization -Name cpvalTodylLaptopPolicyKey
-    $desktopDeploymentKey = Ninja-Property-Get -Type Organization -Name cpvalTodylDesktopPolicyKey
-    $serverDeploymentKey  = Ninja-Property-Get -Type Organization -Name cpvalTodylServerPolicyKey
+    $laptopDeploymentKey  = Ninja-Property-Get -Name cpvalTodylLaptopPolicyKey
+    $desktopDeploymentKey = Ninja-Property-Get -Name cpvalTodylDesktopPolicyKey
+    $serverDeploymentKey  = Ninja-Property-Get -Name cpvalTodylServerPolicyKey
 
     $todylKey = $null
 }

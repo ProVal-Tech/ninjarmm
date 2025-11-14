@@ -26,7 +26,7 @@
 Begin {
     # Variables
     $regInstallPath   = 'HKLM:\SOFTWARE\SentinelOne\Sentinel Agent'
-    $siteToken        = Ninja-Property-Get -Type Organization -Name cpvalSentineloneKey
+    $siteToken        = Ninja-Property-Get -Name cpvalSentineloneKey
     $ProjectName      = 'SentinelOne'
     $WorkingDirectory = "C:\ProgramData\_automation\script\$ProjectName"
     $installerPath    = Join-Path $WorkingDirectory 'SentinelOneAgent-Windows.msi'

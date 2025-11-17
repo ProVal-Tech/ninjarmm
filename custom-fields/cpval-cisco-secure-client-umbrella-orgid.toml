@@ -1,0 +1,44 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Text"
+
+[Overview]
+Custom_field_type = "Text"
+Label = "cPVAL Cisco Secure Client Umbrella OrgID"
+Name = "cpvalCiscoSecureClientUmbrellaOrgid"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_Org = false
+Location = true
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Provide the Umbrella OrgID associated with your organization. This field is required if you choose “All” or select the Umbrella module for installation."
+Tooltip_text = "Enter the OrgID required for Cisco Secure Client Umbrella configuration. Mandatory when “All” or Umbrella module is selected."
+Footer_text = "Tip: Ensure the OrgID matches your Umbrella account settings. This is mandatory for successful deployment when “All” or Umbrella module is selected."
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Managed devices"
+Custom_Field_Tab_Name = "Cisco Secure Client Device"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (OrgID, Fingerprint, OrgID) for proper installation and functionality."
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization custom fields > Edit custom tabs > Manage tabs"
+Custom_Field_Tab_Name = "Cisco Secure Client"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (OrgID, Fingerprint, OrgID) for proper installation and functionality."
+
+[Location_Custom_Fields]
+Path = "Administration > Organizations > Location custom fields > Edit custom tabs > Manage tabs"
+Custom_Field_Tab_Name = "Cisco Secure Client"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (OrgID, Fingerprint, OrgID) for proper installation and functionality."

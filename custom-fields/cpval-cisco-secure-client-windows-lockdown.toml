@@ -1,0 +1,44 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Checkbox"
+
+[Overview]
+Custom_field_type = "Checkbox"
+Label = "cPVAL Cisco Secure Client Windows Lockdown"
+Name = "cpvalCiscoSecureClientWindowsLockdown"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_Org = false
+Location = true
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Check this box to lock Cisco Secure Client services and prevent any modifications. This lockdown applies to all users, including administrators. This setting is supported only on Windows systems."
+Tooltip_text = "Enable this option to prevent Cisco Secure Client services from being modified. Administrators are not exempt from this restriction. Applicable for Windows only."
+Footer_text = "Tip: Leave unchecked to allow service modifications. When enabled, even administrators cannot change Cisco Secure Client services. Windows only."
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Managed devices"
+Custom_Field_Tab_Name = "Cisco Secure Client Device"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (Fingerprint, Fingerprint, Fingerprint) for proper installation and functionality."
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization custom fields > Edit custom tabs > Manage tabs"
+Custom_Field_Tab_Name = "Cisco Secure Client"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (Fingerprint, Fingerprint, Fingerprint) for proper installation and functionality."
+
+[Location_Custom_Fields]
+Path = "Administration > Organizations > Location custom fields > Edit custom tabs > Manage tabs"
+Custom_Field_Tab_Name = "Cisco Secure Client"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (Fingerprint, Fingerprint, Fingerprint) for proper installation and functionality."

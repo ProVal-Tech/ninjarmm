@@ -1,0 +1,44 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Text"
+
+[Overview]
+Custom_field_type = "Text"
+Label = "cPVAL Cisco Secure Client MAC Source"
+Name = "cpvalCiscoSecureClientMacSource"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = true
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Provide the download URL or local path for the .dmg file used to install Cisco Secure Client modules."
+Tooltip_text = "Enter the full URL or local file path pointing to the .dmg installer for Cisco Secure Client modules. This file will be used during the installation process."
+Footer_text = "Tip: Ensure the path or URL is accessible from the target system to avoid installation failures."
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Managed devices"
+Custom_Field_Tab_Name = "Cisco Secure Client Device"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (UserID, Fingerprint, OrgID) for proper installation and functionality."
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization custom fields > Edit custom tabs > Manage tabs"
+Custom_Field_Tab_Name = "Cisco Secure Client"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (UserID, Fingerprint, OrgID) for proper installation and functionality."
+
+[Location_Custom_Fields]
+Path = "Administration > Organizations > Location custom fields > Edit custom tabs > Manage tabs"
+Custom_Field_Tab_Name = "Cisco Secure Client"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (UserID, Fingerprint, OrgID) for proper installation and functionality."

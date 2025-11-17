@@ -1,0 +1,44 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Checkbox"
+
+[Overview]
+Custom_field_type = "Checkbox"
+Label = "cPVAL Cisco Secure Client Windows Show VPN"
+Name = "cpvalCiscoSecureClientWindowsShowVpn"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_Org = false
+Location = true
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = "Check this box if you want the Core-VPN module to appear in the system tray icon. By default, the solution does not display Core-VPN in the tray. This setting applies only to Windows systems."
+Tooltip_text = "Enable this option to display the Core-VPN module in the system tray icon. By default, Core-VPN is not shown. Applicable for Windows only."
+Footer_text = "Tip: Leave unchecked to keep the default behavior (Core-VPN hidden). This option is supported only on Windows machines."
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Managed devices"
+Custom_Field_Tab_Name = "Cisco Secure Client Device"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (Fingerprint, Fingerprint, Fingerprint) for proper installation and functionality."
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization custom fields > Edit custom tabs > Manage tabs"
+Custom_Field_Tab_Name = "Cisco Secure Client"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (Fingerprint, Fingerprint, Fingerprint) for proper installation and functionality."
+
+[Location_Custom_Fields]
+Path = "Administration > Organizations > Location custom fields > Edit custom tabs > Manage tabs"
+Custom_Field_Tab_Name = "Cisco Secure Client"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (Fingerprint, Fingerprint, Fingerprint) for proper installation and functionality."

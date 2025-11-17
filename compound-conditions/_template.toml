@@ -5,37 +5,6 @@ Agent_Policy = ""
 [Conditions]
 Trigger_when = "all conditions are true / any condition is true"
 
-[Conditions.Script_result_condition]
-
-[Conditions.Script_result_condition.Evaluation_script]
-Evaluation_script = ""
-
-[Conditions.Script_result_condition.Evaluation_script.Parameters]
-Run_As = "System / Current Logged on User / Preferred Windows Local Admin / Preferred Windows Domain Admin"
-Preset_Parameter = ""
-Parameter1 = "Value1"
-Parameter2 = "Value1"
-Parameter3 = "Value1"
-
-[Conditions.Script_result_condition.Result_Code]
-Operator = "not equal to / greater than or equal to / less than or equal to / greater than / less than / equal to / any"
-Result_Code = ""
-
-[Conditions.Script_result_condition.Timeout]
-Hour = ""
-Minutes = ""
-
-[Conditions.Script_result_condition.Output]
-Operator = "Contains / Not Empty / Does not contain / Stats / Ends / Regular Expression"
-Text = ""
-
-Include_Script_Output_in_final_Alert = false / true
-
-[Conditions.Script_result_condition.Script_error_notification]
-Script_error_notification = false / true
-Operator = "not equal to / greater than or equal to / less than or equal to / greater than / less than / equal to / any"
-Result_Code = ""
-
 [Conditions.Custom_Fields]
 
 [Conditions.Custom_Fields.Custom_field_value_must_meet_ALL_conditions]
@@ -80,6 +49,37 @@ Text = ""
 Dropdown_value = ""
 Checkbox_value = false / true
 
+[Conditions.Script_result_condition]
+
+[Conditions.Script_result_condition.Evaluation_script]
+Evaluation_script = ""
+
+[Conditions.Script_result_condition.Evaluation_script.Parameters]
+Run_As = "System / Current Logged on User / Preferred Windows Local Admin / Preferred Windows Domain Admin"
+Preset_Parameter = ""
+Parameter1 = "Value1"
+Parameter2 = "Value1"
+Parameter3 = "Value1"
+
+[Conditions.Script_result_condition.Result_Code]
+Operator = "not equal to / greater than or equal to / less than or equal to / greater than / less than / equal to / any"
+Result_Code = ""
+
+[Conditions.Script_result_condition.Timeout]
+Hour = ""
+Minutes = ""
+
+[Conditions.Script_result_condition.Output]
+Operator = "Contains / Not Empty / Does not contain / Stats / Ends / Regular Expression"
+Text = ""
+
+Include_Script_Output_in_final_Alert = false / true
+
+[Conditions.Script_result_condition.Script_error_activity]
+Script_error_activity = false / true
+Operator = "not equal to / greater than or equal to / less than or equal to / greater than / less than / equal to / any"
+Result_Code = ""
+
 [Conditions.Software]
 Software_name = "Software1, Software2, Software3"
 Trigger_when = "Any Software / All Software"
@@ -88,6 +88,20 @@ Condition = "Exists / Doesn't exist"
 [Conditions.Windows_Service]
 Windows_services = "Service1, Service2, Service3"
 Trigger_when = "Exists / Doesn't exist / Up / Down"
+
+[Conditions.Operating_System]
+Trigger_when_operating_system = "Equal to / Not Equal to / Contains / Does not contain"
+Operating_System = "OS1, OS2, OS3"
+
+[Conditions.Process]
+Process_name = "Process1, Process2, Process3"
+Trigger_when = "Any Process / All Processes"
+Condition = "Running / Not Running"
+
+[Conditions.Windows_role/feature]
+Feature/Display_name = "Name1, Name2, Name3"
+Trigger_when = "Any role/feature / All role/feature"
+Condition = "Exists / Doesn't exist"
 
 [Automations]
 

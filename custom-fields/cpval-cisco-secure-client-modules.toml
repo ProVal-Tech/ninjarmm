@@ -1,0 +1,71 @@
+[Custom_Field]
+Path = "Administration > Organizations > Organization Custom Fields"
+Type = "Multi-select"
+
+[Overview]
+Custom_field_type = "Multi-select"
+Label = "cPVAL Cisco Secure Client Modules"
+Name = "cpvalCiscoSecureClientModules"
+Custom_field_is_required = false
+
+[Inheritance]
+Device = true
+End_User = false
+Location = true
+Organization = true
+
+[Permissions]
+Automation = "Read_Write"
+API = "Read_Write"
+Technician_access = "Editable"
+
+[Details]
+Description = """
+Use this field to specify which modules should be installed. If you select “All,” all available modules will be installed regardless of other selections.
+Note: If the Umbrella module is selected, you must configure UserID, Fingerprint, and OrgID.
+"""
+Tooltip_text = "Select the modules to install on the computer. Choosing “All” will override individual selections and install every module."
+Footer_text = "Tip: Selecting “All” installs every module. For Umbrella, ensure required identifiers (userid, fingerprint, OrgID) are set."
+
+[Advanced_Settings]
+
+[Advanced_Settings.Multi-select]
+Option_Value = """
+All
+Core-VPN
+Umbrella
+Diagnostic And Reporting Tool
+Network Visibility Module
+ISE Posture
+ThousandEyes Endpoint
+Zero Trust Access
+Start Before Login (Windows Only)
+Network Access Manager (Windows Only)
+VPN Posture (Windows Only)
+Duo (Mac Only)
+Fireamp (Mac Only)
+Secure Firewall Posture (Mac Only)
+"""
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Fields]
+
+Path = "Administration > Devices > Roles"
+
+[Device_Custom_Field.Role]
+Role_Name = "Managed devices"
+Custom_Field_Tab_Name = "Cisco Secure Client Device"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (UserID, Fingerprint, OrgID) for proper installation and functionality."
+
+[Organization_Custom_Fields]
+Path = "Administration > Organizations > Organization custom fields > Edit custom tabs > Manage tabs"
+Custom_Field_Tab_Name = "Cisco Secure Client"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (UserID, Fingerprint, OrgID) for proper installation and functionality."
+
+[Location_Custom_Fields]
+Path = "Administration > Organizations > Location custom fields > Edit custom tabs > Manage tabs"
+Custom_Field_Tab_Name = "Cisco Secure Client"
+Custom_Field_Tab_Description = "Stores all Cisco Secure Client custom fields for configuration and deployment, including OS selection, module settings, installer paths, and Umbrella parameters (UserID, Fingerprint, OrgID) for proper installation and functionality."

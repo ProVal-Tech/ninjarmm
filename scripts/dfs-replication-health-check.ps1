@@ -27,11 +27,11 @@ if ($EventErrors -or $DfsrState) {
     Write-Output 'DFS Replication issues detected'
     if ($DfsrState) {
         Write-Output 'Replication State:'
-        $DfsrState | Group-Object UpdateState | Select-Object Name, Count | Format-Table -AutoSize
+        $DfsrState | Group-Object UpdateState | Select-Object Name, Count | Format-List
     }
     if ($EventErrors) {
         Write-Output 'Recent DFSR Errors/Warnings:'
-        $EventErrors | Select-Object TimeCreated, Id, LevelDisplayName, Message | Format-Table -AutoSize
+        $EventErrors | Select-Object TimeCreated, Id, LevelDisplayName, Message | Format-List
     }
     exit 1   # Trigger alert
 } else {
